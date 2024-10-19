@@ -6,7 +6,8 @@ export { cx, type CxOptions } from './cx/cx'
 export {
 	EMPTY_OBJECT,
 	getOptionalObject,
-	type OptionalObject,
+	type OptionalObject
 } from './get-optional-object/get-optional-object'
+export { mergeProps } from './merge-props/merge-props'
 export { noop } from './noop/noop'
 export { polymorphic, type PolymorphicProps } from './polymorphic/polymorphic'
