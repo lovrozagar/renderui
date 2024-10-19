@@ -1,7 +1,13 @@
-# @renderui/accordion
+# @renderui/utils
 
-## 0.0.1
+## 0.2.4
 
 ### Patch changes
 
-- Added accordion component
+- Refactor and export shared utility functions
+
+## 0.2.5
+
+### Patch changes
+
+- Add and export getOptionalObject and mergeProps utility functions
