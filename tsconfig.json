@@ -1,4 +1,5 @@
 {
+	"$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
 		"strict": true,
 		"noEmit": true,
@@ -19,5 +20,7 @@
 		"paths": {
 			"@/*": ["./src/*"]
 		}
-	}
+	},
+	"include": ["ts-reset.d.ts", "packages"],
+  "exclude": ["**/node_modules", "**/dist", "**/.turbo"]
 }
