@@ -16,13 +16,29 @@
 		"types-react-dom": "^19.0.0-rc.1",
 		"typescript": "^5.5.4"
 	},
+	"exports": {
+		".": {
+			"import": {
+				"default": "./dist/index.js",
+				"types": "./dist/index.d.ts"
+			}
+		}
+	},
+	"files": [
+		"dist"
+	],
 	"license": "MIT",
-	"name": "@renderui/accordion",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"name": "@renderui/utils",
 	"peerDependencies": {
 		"react": ">=18",
 		"react-dom": ">=18"
 	},
 	"private": false,
+	"publishConfig": {
+		"access": "public"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/lovrozagar/renderui"
@@ -30,5 +46,7 @@
 	"scripts": {
 		"build": "bunchee -m"
 	},
-	"version": "0.2.3"
+	"type": "module",
+	"types": "./dist/index.d.ts",
+	"version": "0.2.4"
 }
