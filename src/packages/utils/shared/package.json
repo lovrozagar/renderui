@@ -1,0 +1,33 @@
+{
+	"author": {
+		"email": "lovro.zagar5@gmail.com",
+		"name": "Lovro Žagar"
+	},
+	"dependencies": {
+		"class-variance-authority": "^0.7.0",
+		"tailwind-merge": ">=2.5.4"
+	},
+	"devDependencies": {
+		"bunchee": "^5.5.1",
+		"react": "19.0.0-rc-a960b92c-20240819",
+		"react-dom": "19.0.0-rc-a960b92c-20240819",
+		"types-react": "^19.0.0-rc.1",
+		"types-react-dom": "^19.0.0-rc.1",
+		"typescript": "^5.5.4"
+	},
+	"license": "MIT",
+	"name": "@renderui/accordion",
+	"peerDependencies": {
+		"react": ">=18",
+		"react-dom": ">=18"
+	},
+	"private": false,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/lovrozagar/renderui"
+	},
+	"scripts": {
+		"build": "bunchee -m"
+	},
+	"version": "0.0.1"
+}
