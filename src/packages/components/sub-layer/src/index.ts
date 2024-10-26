@@ -1,2 +1,2 @@
-export { SubLayer } from "./components/sub-layer";
-export type { SubLayerProps } from "./types/sub-layer";
+export { SubLayer } from "./components/sub-layer"
+export type { SubLayerProps } from "./types/sub-layer"

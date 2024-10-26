@@ -1,8 +1,6 @@
-import type { Simplify } from '@/components/_shared/types/simplify'
-import type React from 'react'
+import type { PolymorphicProps, Simplify } from "@renderui/utils"
+import type { ComponentPropsWithRef } from "react"
 
-import type { AsChildProp } from '@/components/_shared/types/as-child'
-
-type SubLayerProps = Simplify<React.ComponentPropsWithRef<'span'> & AsChildProp>
+type SubLayerProps = Simplify<ComponentPropsWithRef<"span"> & PolymorphicProps>
 
 export type { SubLayerProps }
