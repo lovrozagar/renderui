@@ -23,7 +23,7 @@
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "name": "@renderui/sub-layer",
+  "name": "@renderui/hooks",
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"

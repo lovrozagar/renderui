@@ -1,7 +1,7 @@
-# @renderui/utils
+# @renderui/hooks
 
-## 0.2.4
+## 0.1.8
 
 ### Patch changes
 
-- Refactor and export shared utility functions
+- Added useFreshRef and useMutationObserverHooks, refactor from @renderui/core
