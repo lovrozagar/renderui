@@ -1,0 +1,42 @@
+
+# dependencies
+node_modules
+
+# build
+dist
+dist-ssr
+build
+out
+*.tsbuildinfo
+
+# testing & coverage
+coverage
+coverage-ts
+
+# env
+.env
+
+# Editor directories and files
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.local
+*.pem
+.idea
+.todo
+.DS_Store
+
+# vendors
+.turbo
+.vercel
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
