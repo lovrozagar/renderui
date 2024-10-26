@@ -4,7 +4,7 @@
     "name": "Lovro Žagar"
   },
   "devDependencies": {
-    "@renderui/utils": "^0.2.5",
+    "@renderui/utils": "^0.2.6",
     "bunchee": "^5.5.1",
     "react": "19.0.0-rc-a960b92c-20240819",
     "react-dom": "19.0.0-rc-a960b92c-20240819",
@@ -20,17 +20,19 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "name": "@renderui/sub-layer",
   "peerDependencies": {
+    "@renderui/utils": "^0.2.6",
     "react": ">=18",
     "react-dom": ">=18"
   },
   "private": false,
-  "sideEffects": false,
   "publishConfig": {
     "access": "public"
   },
@@ -41,6 +43,7 @@
   "scripts": {
     "build": "bunchee -m"
   },
+  "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
   "version": "1.0.0"
