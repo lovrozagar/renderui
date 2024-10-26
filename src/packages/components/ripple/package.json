@@ -1,0 +1,39 @@
+{
+	"author": {
+		"email": "lovro.zagar5@gmail.com",
+		"name": "Lovro Žagar"
+	},
+	"devDependencies": {
+		"@renderui/lazy-motion": ">=1.0.0",
+		"@renderui/sub-layer": ">=1.0.0",
+		"@renderui/utils": ">=0.2.6",
+		"@renderui/hooks": ">=1.0.0",
+		"bunchee": "^5.5.1",
+		"framer-motion": "^11.11.10",
+		"react": "19.0.0-rc-a960b92c-20240819",
+		"react-dom": "19.0.0-rc-a960b92c-20240819",
+		"types-react": "^19.0.0-rc.1",
+		"types-react-dom": "^19.0.0-rc.1",
+		"typescript": "^5.5.4"
+	},
+	"license": "MIT",
+	"name": "@renderui/ripple",
+	"peerDependencies": {
+		"@renderui/lazy-motion": ">=1.0.0",
+		"@renderui/sub-layer": ">=1.0.0",
+		"@renderui/hooks": ">=1.0.0",
+		"@renderui/utils": ">=0.2.6",
+		"framer-motion": "^11.11.10",
+		"react": ">=18",
+		"react-dom": ">=18"
+	},
+	"private": false,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/lovrozagar/renderui"
+	},
+	"scripts": {
+		"build": "bunchee -m"
+	},
+	"version": "0.0.1"
+}
