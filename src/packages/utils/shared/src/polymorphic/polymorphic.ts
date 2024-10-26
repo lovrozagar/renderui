@@ -1,6 +1,10 @@
 import { Slot } from '@radix-ui/react-slot'
 import type React from 'react'
 
+type PolymorphicProps = {
+	asChild?: boolean
+}
+
 type PolymorphicComponent<T extends keyof React.JSX.IntrinsicElements> = (
 	props: React.ComponentPropsWithRef<T>,
 ) => React.ReactNode
@@ -12,4 +16,4 @@ function polymorphic<T extends keyof React.JSX.IntrinsicElements>(
 	return (isAsChild ? Slot : defaultElement) as PolymorphicComponent<T>
 }
 
-export { polymorphic }
+export { polymorphic, type PolymorphicProps }
