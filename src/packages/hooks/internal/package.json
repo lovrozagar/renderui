@@ -3,11 +3,6 @@
 		"email": "lovro.zagar5@gmail.com",
 		"name": "Lovro Žagar"
 	},
-	"dependencies": {
-		"@radix-ui/react-polymorphic": "0.0.14",
-		"class-variance-authority": "^0.7.0",
-		"tailwind-merge": ">=2.5.4"
-	},
 	"devDependencies": {
 		"bunchee": "^5.5.1",
 		"react": "19.0.0-rc-a960b92c-20240819",
@@ -24,13 +19,11 @@
 			}
 		}
 	},
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"license": "MIT",
 	"main": "./dist/index.js",
 	"module": "./dist/index.js",
-	"name": "@renderui/utils",
+	"name": "@renderui/internal-hooks",
 	"peerDependencies": {
 		"react": ">=18",
 		"react-dom": ">=18"
@@ -41,12 +34,12 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/lovrozagar/renderui.git"
+		"url": "https://github.com/lovrozagar/renderui"
 	},
 	"scripts": {
 		"build": "bunchee -m"
 	},
 	"type": "module",
 	"types": "./dist/index.d.ts",
-	"version": "0.2.6"
+	"version": "0.0.1"
 }
