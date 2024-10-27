@@ -4,10 +4,10 @@
     "name": "Lovro Žagar"
   },
   "devDependencies": {
-    "@renderui/lazy-motion": ">=1.0.0",
-    "@renderui/sub-layer": ">=1.0.0",
-    "@renderui/utils": ">=0.2.6",
-    "@renderui/hooks": ">=1.0.0",
+    "@renderui/lazy-motion": ">=1.0.2",
+    "@renderui/sub-layer": ">=1.0.2",
+    "@renderui/utils": ">=0.2.8",
+    "@renderui/hooks": ">=1.0.3",
     "bunchee": "^5.5.1",
     "framer-motion": "^11.11.10",
     "react": "19.0.0-rc-a960b92c-20240819",
@@ -30,10 +30,10 @@
   "module": "./dist/index.js",
   "name": "@renderui/ripple",
   "peerDependencies": {
-    "@renderui/lazy-motion": ">=1.0.0",
-    "@renderui/sub-layer": ">=1.0.0",
-    "@renderui/utils": ">=0.2.6",
-    "@renderui/hooks": ">=1.0.0",
+    "@renderui/lazy-motion": ">=1.0.2",
+    "@renderui/sub-layer": ">=1.0.2",
+    "@renderui/utils": ">=0.2.8",
+    "@renderui/hooks": ">=1.0.3",
     "framer-motion": "^11.11.10",
     "react": ">=18",
     "react-dom": ">=18"
@@ -52,5 +52,5 @@
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.1"
+  "version": "1.0.2"
 }

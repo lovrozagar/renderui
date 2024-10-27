@@ -10,4 +10,11 @@
 
 ### Patch changes
 
-- Fix package.json default export order
+- Fixed package.json default export order
+
+## 1.0.2
+
+### Patch changes
+
+- Fixed keyboard press not activating ripple
+- Fixed ripple duration calculation on ripple created by pointer press
