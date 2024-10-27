@@ -24,3 +24,9 @@
 
 - Add render prop utility, used to return a node or call a function with it's arguments which returns a node
 - Add exclusive union type
+
+## 0.2.8
+
+### Patch changes
+
+- Fix package.json default export order
