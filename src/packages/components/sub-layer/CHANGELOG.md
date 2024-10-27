@@ -11,3 +11,10 @@
 ### Patch changes
 
 - Fix package.json default export order
+
+## 1.0.1
+
+### Patch changes
+
+- Remove "use client" directive
+- Improve stretch styling
