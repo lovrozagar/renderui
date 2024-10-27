@@ -4,12 +4,12 @@
     "name": "Lovro Žagar"
   },
   "devDependencies": {
-		"@renderui/lazy-motion": ">=1.0.0",
-		"@renderui/sub-layer": ">=1.0.0",
-		"@renderui/utils": ">=0.2.6",
-		"@renderui/hooks": ">=1.0.0",
-		"bunchee": "^5.5.1",
-		"framer-motion": "^11.11.10",
+    "@renderui/lazy-motion": ">=1.0.0",
+    "@renderui/sub-layer": ">=1.0.0",
+    "@renderui/utils": ">=0.2.6",
+    "@renderui/hooks": ">=1.0.0",
+    "bunchee": "^5.5.1",
+    "framer-motion": "^11.11.10",
     "react": "19.0.0-rc-a960b92c-20240819",
     "react-dom": "19.0.0-rc-a960b92c-20240819",
     "types-react": "^19.0.0-rc.1",
@@ -19,8 +19,8 @@
   "exports": {
     ".": {
       "import": {
-        "default": "./dist/index.js",
-        "types": "./dist/index.d.ts"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       }
     }
   },
@@ -30,11 +30,11 @@
   "module": "./dist/index.js",
   "name": "@renderui/ripple",
   "peerDependencies": {
-		"@renderui/lazy-motion": ">=1.0.0",
-		"@renderui/sub-layer": ">=1.0.0",
-		"@renderui/utils": ">=0.2.6",
-		"@renderui/hooks": ">=1.0.0",
-		"framer-motion": "^11.11.10",
+    "@renderui/lazy-motion": ">=1.0.0",
+    "@renderui/sub-layer": ">=1.0.0",
+    "@renderui/utils": ">=0.2.6",
+    "@renderui/hooks": ">=1.0.0",
+    "framer-motion": "^11.11.10",
     "react": ">=18",
     "react-dom": ">=18"
   },
@@ -52,5 +52,5 @@
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
