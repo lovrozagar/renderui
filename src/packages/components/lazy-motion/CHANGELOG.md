@@ -12,3 +12,10 @@
 ### Patch changes
 
 - Fix package.json default export order
+
+## 1.0.2
+
+### Patch changes
+
+- Add "use client" directive to providers
+- Fix feature lazy import functions
