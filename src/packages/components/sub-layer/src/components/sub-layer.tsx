@@ -1,5 +1,3 @@
-"use client"
-
 import { cn, polymorphic } from "@renderui/utils"
 import { DEFAULT_SUB_LAYER_CLASSNAME } from "../constants/constants"
 import type { SubLayerProps } from "../types/sub-layer"
