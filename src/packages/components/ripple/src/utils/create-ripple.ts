@@ -21,7 +21,7 @@ function createRipple(props: CreateRippleProps) {
   const size =
     type === "keyboard"
       ? Math.max(props.width, props.height)
-      : Math.max(props.event.clientX, props.event.clientY)
+      : Math.max(props.event.currentTarget.clientWidth, props.event.currentTarget.clientHeight)
 
   const rect =
     type === "keyboard" ? { x: 0, y: 0 } : props.event.currentTarget.getBoundingClientRect()

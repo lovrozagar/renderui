@@ -29,7 +29,7 @@ function useRipple(props: Omit<RippleProps, "subLayerProps">): UseRippleReturnTy
   const {
     ref,
     opacity: opacityProp,
-    duration: durationProp,
+    animationDuration: durationProp,
     scale: scaleProp,
     transition: transitionProp,
     initial: initialProp,
@@ -62,7 +62,9 @@ function useRipple(props: Omit<RippleProps, "subLayerProps">): UseRippleReturnTy
   }
 
   const getRippleRipplesProps = (ripple: RippleRipple) => {
-    const duration = durationProp ?? getRippleDuration(ripple.size)
+    const msDurationProp = durationProp ? Math.round(durationProp / 1000) : undefined
+
+    const duration = msDurationProp ?? getRippleDuration(ripple.size)
 
     const scale = scaleProp ?? RIPPLE_ANIMATION_END_DEFAULT_SCALE
 

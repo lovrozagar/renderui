@@ -8,7 +8,7 @@ type RipplePrimitiveProps = ComponentPropsWithRef<typeof m.span>
 type RippleCustomProps = {
   isDisabled?: boolean
   opacity?: number
-  duration?: number
+  animationDuration?: number
   scale?: number
   subLayerProps?: SubLayerProps
 }

@@ -15,13 +15,13 @@ const Ripple = (props: RippleProps) => {
 
   return (
     <SubLayer ref={internalSubLayerRef} {...subLayerProps} onClick={addRippleOnPress}>
-      {ripples.map((ripple) => (
-        <LazyMotionDomAnimationProvider key={ripple.key}>
-          <AnimatePresence mode="popLayout">
-            <m.span {...getRippleRipplesProps(ripple)} />
-          </AnimatePresence>
-        </LazyMotionDomAnimationProvider>
-      ))}
+      <LazyMotionDomAnimationProvider>
+        <AnimatePresence mode="popLayout">
+          {ripples.map((ripple) => (
+            <m.span key={ripple.key} {...getRippleRipplesProps(ripple)} />
+          ))}
+        </AnimatePresence>
+      </LazyMotionDomAnimationProvider>
     </SubLayer>
   )
 }

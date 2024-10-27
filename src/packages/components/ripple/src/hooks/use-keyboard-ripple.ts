@@ -1,6 +1,9 @@
 import { useMutationObserver } from "@renderui/hooks"
 import { type Dispatch, type RefObject, type SetStateAction, useCallback } from "react"
-import { KEYBOARD_RIPPLE_DATASET_ATTRIBUTE, KEYBOARD_RIPPLE_MUTATION_OBSERVER_OPTIONS } from "../constants/constants"
+import {
+  KEYBOARD_RIPPLE_DATASET_ATTRIBUTE,
+  KEYBOARD_RIPPLE_MUTATION_OBSERVER_OPTIONS,
+} from "../constants/constants"
 import type { RippleRipple } from "../types/ripple-ripple"
 import { createRipple } from "../utils/create-ripple"
 
