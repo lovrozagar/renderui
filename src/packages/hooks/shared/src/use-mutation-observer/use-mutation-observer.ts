@@ -11,7 +11,7 @@ type UseMutationObserverProps<T extends HTMLElement> = {
 }
 
 function useMutationObserver<T extends HTMLElement>(props: UseMutationObserverProps<T>) {
-  const { node, callback, options, enabled } = props
+  const { node, callback, options, enabled = true } = props
 
   const freshCallback = useFreshRef(callback)
   const freshOptions = useFreshRef(options)
@@ -26,7 +26,7 @@ function useMutationObserver<T extends HTMLElement>(props: UseMutationObserverPr
 
       return
     }
-
+    
     if (observerRef.current) return
 
     observerRef.current = new MutationObserver(freshCallback.current)
