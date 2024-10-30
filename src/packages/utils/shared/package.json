@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "@radix-ui/react-polymorphic": "0.0.14",
-    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "tailwind-merge": ">=2.5.4"
   },
   "devDependencies": {
@@ -24,9 +24,7 @@
       }
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -48,5 +46,5 @@
   },
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "0.2.8"
+  "version": "0.2.9"
 }
