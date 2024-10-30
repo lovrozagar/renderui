@@ -30,3 +30,10 @@
 ### Patch changes
 
 - Fix package.json default export order
+
+## 0.2.9
+
+### Patch changes
+
+- Remove cva as dependency
+- Add clsx as dependency
