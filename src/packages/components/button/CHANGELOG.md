@@ -11,3 +11,10 @@
 ### Patch changes
 
 - Fix button classes prop typings
+
+## 1.0.2
+
+### Patch changes
+
+- Add class-variance-authority as dependency
+- Infer buttonClasses props
