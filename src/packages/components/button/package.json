@@ -6,12 +6,13 @@
   "dependencies": {
     "@renderui/hooks-internal": "^1.0.0",
     "@renderui/utils-internal": "^1.0.0",
-    "react-aria": "^3.35.1"
+    "react-aria": "^3.35.1",
+    "class-variance-authority": "^0.7.0"
   },
   "devDependencies": {
     "@renderui/hooks": ">=1.0.2",
     "@renderui/ripple": ">=1.0.1",
-    "@renderui/utils": ">=0.2.8",
+    "@renderui/utils": ">=0.2.9",
     "bunchee": "^5.5.1",
     "react": "19.0.0-rc-a960b92c-20240819",
     "react-dom": "19.0.0-rc-a960b92c-20240819",
@@ -53,5 +54,5 @@
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
