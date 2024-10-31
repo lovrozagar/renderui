@@ -1,11 +1,11 @@
 import type { UseAriaHandlersProps } from "@renderui/hooks-internal"
 import type { Ripple, RippleProps } from "@renderui/ripple"
-import type { Color, PolymorphicProps, Simplify } from "@renderui/utils"
+import type { ClassNameProps, Color, PolymorphicProps, Simplify } from "@renderui/utils"
 import type { ComponentPropsWithRef, ReactNode } from "react"
 import type { ButtonClassesProps } from "../classes/button-classes"
 import type { GetLoaderPropsReturn } from "../utils/get-loader-props"
 
-type ButtonPrimitiveProps = Omit<ComponentPropsWithRef<"button">, "children" | "disabled" | "color">
+type ButtonPrimitiveProps = Omit<ComponentPropsWithRef<"button">, "className" | "children" | "disabled" | "color">
 
 type ButtonRenderPropsProps = {
   isPressed: boolean
@@ -23,7 +23,7 @@ type ButtonLoaderRenderPropsProps = Omit<ButtonRenderPropsProps, "Ripple"> & {
 
 type ButtonLoaderRenderProps = ((props: ButtonLoaderRenderPropsProps) => ReactNode) | ReactNode
 
-type ButtonCustomProps = {
+type ButtonCustomProps = ClassNameProps & ButtonClassesProps & Partial<UseAriaHandlersProps> & PolymorphicProps &  {
   children?: ButtonRenderProps
   startContent?: ButtonRenderProps
   endContent?: ButtonRenderProps
@@ -40,10 +40,7 @@ type ButtonCustomProps = {
 
 type ButtonProps = Simplify<
   ButtonPrimitiveProps &
-    ButtonClassesProps &
-    ButtonCustomProps &
-    Partial<UseAriaHandlersProps> &
-    PolymorphicProps
+    ButtonCustomProps
 >
 
 export type { ButtonProps, ButtonClassesProps }

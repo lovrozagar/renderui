@@ -11,7 +11,7 @@
   "devDependencies": {
     "@renderui/hooks": ">=1.0.2",
     "@renderui/ripple": ">=1.0.1",
-    "@renderui/utils": ">=0.3.0",
+    "@renderui/utils": ">=0.3.1",
     "bunchee": "^5.5.1",
     "react": "19.0.0-rc-a960b92c-20240819",
     "react-dom": "19.0.0-rc-a960b92c-20240819",
@@ -34,8 +34,8 @@
   "name": "@renderui/button",
   "peerDependencies": {
     "@renderui/hooks": ">=1.0.2",
-    "@renderui/ripple": ">=1.0.1",
-    "@renderui/utils": ">=0.2.8",
+    "@renderui/ripple": ">=1.0.3",
+    "@renderui/utils": ">=0.3.1",
     "react": ">=18",
     "react-dom": ">=18"
   },
@@ -53,5 +53,5 @@
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.3"
+  "version": "1.0.4"
 }
