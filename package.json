@@ -4,7 +4,7 @@
 		"name": "Lovro Žagar"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.8.3",
+		"@biomejs/biome": "^1.9.2",
 		"@changesets/cli": "^2.26.0",
 		"@commitlint/cli": "^18.6.1",
 		"@commitlint/config-conventional": "^19.5.0",
@@ -42,5 +42,10 @@
 		"type:check": "tsc --noEmit",
 		"type:coverage": "typescript-coverage-report"
 	},
-	"version": "2.0.6"
+	"version": "2.0.6",
+  "workspaces": [
+    "src/packages/components/*",
+    "src/packages/utils/*",
+    "src/packages/hooks/*"
+  ]
 }
