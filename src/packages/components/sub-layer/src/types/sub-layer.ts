@@ -1,6 +1,8 @@
-import type { PolymorphicProps, Simplify } from "@renderui/utils"
+import type { ClassNameProps, PolymorphicProps, Simplify } from "@renderui/utils"
 import type { ComponentPropsWithRef } from "react"
 
-type SubLayerProps = Simplify<ComponentPropsWithRef<"span"> & PolymorphicProps>
+type SubLayerPrimitiveProps = Omit<ComponentPropsWithRef<"span">, "className">
+
+type SubLayerProps = Simplify<SubLayerPrimitiveProps & ClassNameProps & PolymorphicProps>
 
 export type { SubLayerProps }
