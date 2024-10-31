@@ -37,3 +37,10 @@
 
 - Remove cva as dependency
 - Add clsx as dependency
+
+## 0.3.0
+
+### Patch changes
+
+- Revert: remove clsx dependency, add cva dependency
+- Module resolution: bunlder - allows for typings of cva to work in consumer packages
