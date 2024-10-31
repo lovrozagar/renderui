@@ -15,11 +15,8 @@
 		"target": "es2022",
 		"moduleDetection": "force",
 		"lib": ["dom", "dom.iterable", "esnext"],
-		"module": "ESNext",
-		"moduleResolution": "bundler",
-		"paths": {
-			"@/*": ["./src/*"]
-		}
+		"module": "esnext",
+		"moduleResolution": "Bundler",
 	},
 	"include": ["ts-reset.d.ts", "packages"],
   "exclude": ["**/node_modules", "**/dist", "**/.turbo"]
