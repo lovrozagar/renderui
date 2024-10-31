@@ -44,3 +44,9 @@
 
 - Revert: remove clsx dependency, add cva dependency
 - Module resolution: bunlder - allows for typings of cva to work in consumer packages
+
+## 0.3.1
+
+### Patch changes
+
+- Export ClassNameProps type
