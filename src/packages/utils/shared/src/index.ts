@@ -2,7 +2,8 @@ export { chain } from "./chain/chain"
 export { cn, type CnOptions } from "./cn/cn"
 export type { Color } from "./color/color"
 export { composeEventHandlers } from "./compose-event-handlers/compose-event-handlers"
-export { cx, type CxOptions } from "./cx/cx"
+export { cva, type VariantProps } from "./cva/cva"
+export { cx, type CxOptions, type CxReturn } from "./cx/cx"
 export {
   EMPTY_OBJECT,
   getOptionalObject,

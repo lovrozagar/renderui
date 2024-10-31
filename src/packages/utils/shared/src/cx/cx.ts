@@ -1,3 +1,1 @@
-import clsx, { type ClassValue } from "clsx"
-
-export { clsx as cx, type ClassValue as CxOptions }
+export { cx, type CxOptions, type CxReturn } from "class-variance-authority"
