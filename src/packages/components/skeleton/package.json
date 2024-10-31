@@ -1,0 +1,51 @@
+{
+  "author": {
+    "email": "lovro.zagar5@gmail.com",
+    "name": "Lovro Žagar"
+  },
+  "dependencies": {
+    "@renderui/utils-internal": ">=1.0.2"
+  },
+  "devDependencies": {
+    "@renderui/utils": ">=0.3.1",
+    "bunchee": "^5.5.1",
+    "react": "19.0.0-rc-a960b92c-20240819",
+    "react-dom": "19.0.0-rc-a960b92c-20240819",
+    "types-react": "^19.0.0-rc.1",
+    "types-react-dom": "^19.0.0-rc.1",
+    "typescript": "^5.5.4"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "files": ["dist"],
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "name": "@renderui/skeleton",
+  "peerDependencies": {
+    "@renderui/utils": ">=0.3.1",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lovrozagar/renderui.git"
+  },
+  "scripts": {
+    "build": "bunchee -m"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "version": "1.0.0"
+}
