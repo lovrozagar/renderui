@@ -18,3 +18,10 @@
 
 - Add class-variance-authority as dependency
 - Infer buttonClasses props
+
+## 1.0.3
+
+### Patch changes
+
+- Refactor class styling api
+- Add light variant
