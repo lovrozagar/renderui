@@ -1,5 +1,5 @@
 export { chain } from "./chain/chain"
-export { cn, type CnOptions } from "./cn/cn"
+export { cn, type CnOptions, type ClassNameProps } from "./cn/cn"
 export type { Color } from "./color/color"
 export { composeEventHandlers } from "./compose-event-handlers/compose-event-handlers"
 export { cva, type VariantProps } from "./cva/cva"
