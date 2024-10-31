@@ -1,4 +1,4 @@
-import { cva } from "class-variance-authority"
+import { type VariantProps, cva } from "class-variance-authority"
 
 const loaderClasses = cva(["_loader box-border inline-block aspect-square"], {
   variants: {
@@ -10,7 +10,7 @@ const loaderClasses = cva(["_loader box-border inline-block aspect-square"], {
       base: undefined,
       edge: undefined,
       ring: undefined,
-      dots: "top-[1px] flex h-full items-center gap-0.5",
+      dots: "flex h-full items-center gap-0.5",
     },
     size: {
       small: "size-4",
@@ -75,4 +75,6 @@ const loaderClasses = cva(["_loader box-border inline-block aspect-square"], {
   ],
 })
 
-export { loaderClasses }
+type LoaderClassesProps = VariantProps<typeof loaderClasses>
+
+export { loaderClasses, type LoaderClassesProps }
