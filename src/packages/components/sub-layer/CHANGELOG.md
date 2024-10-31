@@ -1,6 +1,6 @@
 # @renderui/sub-layer
 
-## 0.0.1
+## 1.0.0
 
 ### Patch changes
 
@@ -12,9 +12,15 @@
 
 - Fix package.json default export order
 
-## 1.0.1
+## 1.0.2
 
 ### Patch changes
 
 - Remove "use client" directive
 - Improve stretch styling
+
+## 1.0.3
+
+### Patch changes
+
+- Change className prop type to ClassValue instead of string
