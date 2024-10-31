@@ -7,6 +7,7 @@ import { buttonClasses } from "../classes/button-classes"
 import type { ButtonProps } from "../types/button"
 import { getLoaderProps } from "../utils/get-loader-props"
 import { getRippleProps } from "../utils/get-ripple-props"
+import { getStyleVariables } from "../utils/get-style-variables"
 
 function useButton(
   props: Omit<
@@ -35,7 +36,6 @@ function useButton(
     variant = "solid",
     color = "primary",
     loaderPosition = "end",
-    hasLoaderOnLoading = true,
     hasDefaultInnerRing = true,
     hasDefaultHoverStyles = true,
     hasDefaultFocusVisibleStyles = true,
@@ -66,8 +66,6 @@ function useButton(
   )
   const { isPressed, isKeyboardPressed } = ariaFlags
 
-  const mergedLoaderProps = getLoaderProps({ isLoading, loaderPosition })
-
   return {
     buttonProps: {
       type,
@@ -83,38 +81,34 @@ function useButton(
           hasDefaultPressedStyles,
           hasDefaultHoverStyles,
           hasLowerOpacityOnLoading,
-          hasLoaderOnLoading,
           hasDisabledStyles,
           hasShadowOnHover,
-          hasContentOnLoading: !(isLoading && loaderPosition === "absolute-center"),
+          hasContentOnLoading,
         }),
         className,
       ),
       style: {
-        "--button-bg": `var(--${color})`,
-        "--button-color": `var(--${color}-foreground)`,
+        ...getStyleVariables({ color, variant }),
         ...style,
       } as CSSProperties,
       "aria-label": isLoading ? "loading" : undefined,
       "aria-busy": isLoading || undefined,
+      "data-slot": "button",
       "data-variant": variant,
       "data-color": color,
       "data-loading": isLoading || undefined,
       "data-disabled": isDisabled,
-      "data-slot": "base",
       ...ariaComponentProps,
       ...restProps,
     },
     subLayerProps,
     rippleProps: getRippleProps({ rippleProps, isLoading }),
-    loaderProps: mergedLoaderProps,
     utility: {
       isPressed,
       isKeyboardPressed,
       isLoading,
       loaderPosition,
-      hasLoaderOnLoading,
-      loaderProps: getLoaderProps({ isLoading, loaderPosition }),
+      loaderProps: getLoaderProps({ isLoading }),
     },
   }
 }

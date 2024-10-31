@@ -1,5 +1,5 @@
 import type { RippleProps } from "@renderui/ripple"
-import { getOptionalObject } from "@renderui/utils"
+import { cx, getOptionalObject } from "@renderui/utils"
 
 type GetRipplePropsArgs = {
   rippleProps: RippleProps | undefined
@@ -10,14 +10,19 @@ type GetRipplePropsArgs = {
 const getRippleProps = (props: GetRipplePropsArgs): any => {
   const { rippleProps, isLoading } = props
 
-  const { isDisabled: isDisabledProp, ...restRippleProps } = getOptionalObject(rippleProps)
+  const {
+    isDisabled: isDisabledProp,
+    className,
+    style,
+    ...restRippleProps
+  } = getOptionalObject(rippleProps)
 
   const isDisabled = isLoading ?? isDisabledProp
 
   return {
-    "data-slot": "ripple",
-    "className": isLoading ? "!text-[rgba(var(--button-color))]" : undefined,
+    "data-slot": "loader",
     "data-disabled": isDisabled,
+    "className": isLoading ? cx("text-[rgba(var(--button-color))]", className) : undefined,
     ...restRippleProps,
   }
 }

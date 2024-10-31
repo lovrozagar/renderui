@@ -1,7 +1,7 @@
-import { cva } from "@renderui/utils"
+import { type VariantProps, cva } from "@renderui/utils"
 
 const buttonClasses = cva(
-  "_button group relative box-border inline-flex cursor-pointer select-none appearance-none items-center justify-center gap-3 whitespace-nowrap rounded text-sm font-medium outline-none ring-ring-color ring-offset-background transition-[box-shadow,color,background-color,transform,opacity] duration-fast data-[loading=true]:cursor-default [&_[data-slot=loader]]:opacity-0",
+  "_button group relative box-border inline-flex cursor-pointer select-none appearance-none items-center justify-center gap-3 whitespace-nowrap rounded text-sm font-medium outline-none ring-ring-color ring-offset-background transition-[box-shadow,color,background-color,transform,opacity] duration-fast data-[loading=true]:cursor-default",
   {
     variants: {
       variant: {
@@ -11,6 +11,8 @@ const buttonClasses = cva(
         text: "data-[hover=true]:text-[rgba(var(--button-bg),0.85)]",
         ghost: "data-[hover=true]:bg-[rgba(var(--button-bg),0.15)]",
         shadow: "shadow-lg shadow-[rgba(var(--button-bg),0.3)]",
+        light:
+          "bg-[rgba(var(--button-bg),0.15)] text-[rgba(var(--button-bg))] data-[hover=true]:bg-[rgba(var(--button-bg),0.2)]",
       },
       size: {
         auto: undefined,
@@ -43,15 +45,9 @@ const buttonClasses = cva(
         true: "data-[loading=true]:opacity-70",
         false: undefined,
       },
-      hasLoaderOnLoading: {
-        true: "[&[data-loading=true]_[data-slot=loader]]:opacity-100",
-        false: undefined,
-      },
       hasContentOnLoading: {
-        true: "[&[data-loading=true]_[data-slot=loader]]:flex [&_[data-slot=loader]]:hidden",
-        false: [
-          "[&[data-loading=true]]:!text-transparent [&[data-loading=true]_*]:[transition:all_150ms,color_0s] [&[data-loading=true]_[data-slot=ripple]]:opacity-100 [&[data-loading=true]_[data-slot=sub-layer]]:opacity-100 [&[data-loading=true]_>_*]:opacity-0",
-        ],
+        true: undefined,
+        false: "data-[loading=true]:text-transparent",
       },
       hasDisabledStyles: {
         true: "disabled:cursor-not-allowed disabled:opacity-40",
@@ -107,4 +103,6 @@ const buttonClasses = cva(
   },
 )
 
-export { buttonClasses }
+type ButtonClassesProps = VariantProps<typeof buttonClasses>
+
+export { buttonClasses, type ButtonClassesProps }

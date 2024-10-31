@@ -1,15 +1,16 @@
-import type { ButtonProps } from "../types/button"
-
-type GetLoaderPropsArgs = Pick<ButtonProps, "isLoading" | "loaderPosition">
+type GetLoaderPropsArgs = {
+  isLoading: boolean
+}
 
 const getLoaderProps = (props: GetLoaderPropsArgs) => {
-  const { isLoading, loaderPosition } = props
+  const { isLoading } = props
 
   return {
     "data-slot": "loader",
-    "position": loaderPosition === "start" || loaderPosition === "end" ? undefined : loaderPosition,
     "className": isLoading ? "text-[rgba(var(--button-color))]" : undefined,
   } as const
 }
 
-export { getLoaderProps }
+type GetLoaderPropsReturn = ReturnType<typeof getLoaderProps>
+
+export { getLoaderProps, type GetLoaderPropsReturn }
