@@ -3,11 +3,8 @@
     "email": "lovro.zagar5@gmail.com",
     "name": "Lovro Žagar"
   },
-  "dependencies": {
-    "class-variance-authority": "^0.7.0"
-  },
   "devDependencies": {
-    "@renderui/utils": ">=0.2.8",
+    "@renderui/utils": ">=0.3.1",
     "bunchee": "^5.5.1",
     "react": "19.0.0-rc-a960b92c-20240819",
     "react-dom": "19.0.0-rc-a960b92c-20240819",
@@ -27,9 +24,9 @@
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "name": "@renderui/loader-qa",
+  "name": "@renderui/loader",
   "peerDependencies": {
-    "@renderui/utils": ">=0.2.8",
+    "@renderui/utils": ">=0.3.1",
     "react": ">=18",
     "react-dom": ">=18"
   },
@@ -47,5 +44,5 @@
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.1"
+  "version": "1.0.0"
 }
