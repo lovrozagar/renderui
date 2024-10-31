@@ -1,11 +1,11 @@
 import type { SubLayerProps } from "@renderui/sub-layer"
-import type { Simplify } from "@renderui/utils"
+import type { ClassNameProps, Simplify } from "@renderui/utils"
 import type { m } from "framer-motion"
 import type { ComponentPropsWithRef } from "react"
 
-type RipplePrimitiveProps = ComponentPropsWithRef<typeof m.span>
+type RipplePrimitiveProps = Omit<ComponentPropsWithRef<typeof m.span>, 'className'>
 
-type RippleCustomProps = {
+type RippleCustomProps = ClassNameProps & {
   isDisabled?: boolean
   opacity?: number
   animationDuration?: number
