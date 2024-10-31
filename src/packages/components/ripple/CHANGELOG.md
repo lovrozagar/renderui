@@ -18,3 +18,9 @@
 
 - Fixed keyboard press not activating ripple
 - Fixed ripple duration calculation on ripple created by pointer press
+
+## 1.0.3
+
+### Patch changes
+
+- Change className prop type to ClassValue instead of string
