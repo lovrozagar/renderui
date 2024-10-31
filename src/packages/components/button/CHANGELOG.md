@@ -25,3 +25,9 @@
 
 - Refactor class styling api
 - Add light variant
+
+## 1.0.4
+
+### Patch changes
+
+- Change className prop type to ClassValue instead of string
