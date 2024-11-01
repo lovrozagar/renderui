@@ -1,0 +1,8 @@
+# @renderui/primitive
+
+## 1.0.0
+
+### Patch changes
+
+- Added primitive component
+- Added r compound primitive component
