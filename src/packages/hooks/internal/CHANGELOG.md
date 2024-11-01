@@ -6,8 +6,15 @@
 
 - Add useAriaHandlers hook
 
-## 0.1.9
+## 1.0.2
 
 ### Patch changes
 
 - Fix package.json default export order
+
+## 1.0.3
+
+### Patch changes
+
+- Added useUncontrolledState hook
+- Added useControlledState hook
