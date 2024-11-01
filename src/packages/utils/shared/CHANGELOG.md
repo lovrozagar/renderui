@@ -50,3 +50,9 @@
 ### Patch changes
 
 - Export ClassNameProps type
+
+## 0.3.2
+
+### Patch changes
+
+- Added initialize context helper
