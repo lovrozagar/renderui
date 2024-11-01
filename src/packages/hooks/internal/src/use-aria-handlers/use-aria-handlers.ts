@@ -1,5 +1,14 @@
+"use client"
+
 import { mergeProps } from "@renderui/utils"
-import { type Ref, useState } from "react"
+import {
+  type DragEventHandler,
+  type KeyboardEventHandler,
+  type MouseEventHandler,
+  type PointerEventHandler,
+  type Ref,
+  useState,
+} from "react"
 import {
   type AriaFocusRingProps,
   type FocusProps,
@@ -49,14 +58,14 @@ type UseAriaHandlersProps = {
   onHoverChange: HoverProps["onHoverChange"]
   onHoverEnd: HoverProps["onHoverEnd"]
   isUsingAriaPressProps?: boolean
-  onDragStart: React.DragEventHandler
-  onKeyDown: React.KeyboardEventHandler
-  onKeyUp: React.KeyboardEventHandler
-  onMouseDown: React.MouseEventHandler
-  onPointerDown: React.PointerEventHandler
-  onPointerEnter: React.PointerEventHandler
-  onPointerLeave: React.PointerEventHandler
-  onPointerUp: React.PointerEventHandler
+  onDragStart: DragEventHandler
+  onKeyDown: KeyboardEventHandler
+  onKeyUp: KeyboardEventHandler
+  onMouseDown: MouseEventHandler
+  onPointerDown: PointerEventHandler
+  onPointerEnter: PointerEventHandler
+  onPointerLeave: PointerEventHandler
+  onPointerUp: PointerEventHandler
 }
 
 function useAriaHandlers<T extends HTMLElement>(
