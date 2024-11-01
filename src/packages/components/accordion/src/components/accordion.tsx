@@ -1,19 +1,13 @@
-'use client'
+import { AccordionContent } from "./accordion-content"
+import { AccordionItem } from "./accordion-item"
+import { AccordionRoot } from "./accordion-root"
+import { AccordionTrigger } from "./accordion-trigger"
 
-import { Accordion as AccordionPrimitive } from '@radix-ui/react-accordion'
-import { DEFAULT_ACCORDION_CLASSNAME } from '../constants/constants'
-import type { AccordionProps } from '../types/accordion'
+const Accordion = () => null
 
-const Accordion = (props: AccordionProps) => {
-	const { className, ...restProps } = props
-
-	return (
-		<AccordionPrimitive
-			data-slot='base'
-			className={cn(DEFAULT_ACCORDION_CLASSNAME, className)}
-			{...restProps}
-		/>
-	)
-}
+Accordion.Root = AccordionRoot
+Accordion.Trigger = AccordionTrigger
+Accordion.Item = AccordionItem
+Accordion.Content = AccordionContent
 
 export { Accordion }

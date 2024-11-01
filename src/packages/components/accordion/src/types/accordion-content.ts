@@ -1,20 +1,28 @@
-import type { Simplify } from '@/components/_shared/types/simplify'
-import type { AccordionContent as AccordionContentPrimitive } from '@radix-ui/react-accordion'
-import type React from 'react'
+import type { AccordionContent as AccordionContentPrimitive } from "@radix-ui/react-accordion"
 
-import type { AnimationStyleVariables } from '@renderui/utils'
+import type { ClassNameProps, PolymorphicProps, Simplify } from "@renderui/utils"
+import type { AnimationStyleVariables } from "@renderui/utils-internal"
+import type { ComponentPropsWithRef } from "react"
 
-type AccordionContentPrimitiveType = typeof AccordionContentPrimitive
-
-type AccordionContentPrimitiveProps = React.ComponentPropsWithRef<AccordionContentPrimitiveType>
-
-type AccordionContentChildrenContainerProps = {
-	childrenContainerProps?: Simplify<React.ComponentPropsWithRef<'div'> & AsChildProp>
-	animationDuration?: number
-} & AnimationStyleVariables
-
-type AccordionContentProps = Simplify<
-	AccordionContentPrimitiveProps & AccordionContentChildrenContainerProps
+type AccordionContentChildrenContainerPrimitiveProps = Omit<
+  ComponentPropsWithRef<"div">,
+  "className"
 >
+
+type AccordionContentChildrenContainerCustomProps = ClassNameProps & PolymorphicProps
+
+type AccordionContentPrimitiveType = Omit<
+  ComponentPropsWithRef<typeof AccordionContentPrimitive>,
+  "className"
+>
+
+type AccordionContentCustomProps = ClassNameProps &
+  AnimationStyleVariables & {
+    childrenContainerProps?: Simplify<
+      AccordionContentChildrenContainerPrimitiveProps & AccordionContentChildrenContainerCustomProps
+    >
+  }
+
+type AccordionContentProps = Simplify<AccordionContentPrimitiveType & AccordionContentCustomProps>
 
 export type { AccordionContentProps }

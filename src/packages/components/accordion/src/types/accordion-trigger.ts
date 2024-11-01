@@ -1,20 +1,28 @@
-import type { Simplify } from '@/components/_shared/types/simplify'
-import type { AccordionHeader as AccordionHeaderPrimitive } from '@radix-ui/react-accordion'
-import type React from 'react'
+import type { AccordionHeader as AccordionHeaderPrimitive } from "@radix-ui/react-accordion"
+import type { ButtonProps } from "@renderui/button"
+import type { ClassNameProps, Simplify } from "@renderui/utils"
+import type { ComponentPropsWithRef, ReactNode } from "react"
 
-import type { ChevronDownIcon } from '@/components/_shared/components/icons/chevron-down-icon'
-import type { ButtonProps } from '@/components/button/types/button'
+type AccordionTriggerIconPrimitiveProps = Omit<ComponentPropsWithRef<"svg">, "className">
 
-type AccordionTriggerButtonProps = Omit<ButtonProps, 'children'>
+type AccordionTriggerIconCustomProps = ClassNameProps
 
-type AccordionTriggerTriggerProps = {
-	children?: React.ReactNode
-	hasIcon?: boolean
-	icon?: React.ReactNode
-	iconProps?: React.ComponentPropsWithRef<typeof ChevronDownIcon>
-	accordionHeaderProps?: React.ComponentPropsWithRef<typeof AccordionHeaderPrimitive>
+type AccordionTriggerHeaderPrimitiveProps = Omit<
+  ComponentPropsWithRef<typeof AccordionHeaderPrimitive>,
+  "className"
+>
+
+type AccordionTriggerHeaderCustomProps = ClassNameProps
+
+type AccordionTriggerPrimitiveProps = ButtonProps
+
+type AccordionTriggerCustomProps = {
+  hasIcon?: boolean
+  icon?: ReactNode
+  iconProps?: Simplify<AccordionTriggerIconPrimitiveProps & AccordionTriggerIconCustomProps>
+  headerProps?: Simplify<AccordionTriggerHeaderPrimitiveProps & AccordionTriggerHeaderCustomProps>
 }
 
-type AccordionTriggerProps = Simplify<AccordionTriggerButtonProps & AccordionTriggerTriggerProps>
+type AccordionTriggerProps = Simplify<AccordionTriggerPrimitiveProps & AccordionTriggerCustomProps>
 
 export type { AccordionTriggerProps }

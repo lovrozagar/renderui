@@ -1,8 +1,9 @@
-export { Accordion } from './components/accordion'
-export { AccordionItem } from './components/accordion-item'
-export { AccordionTrigger } from './components/accordion-trigger'
-export { AccordionContent } from './components/accordion-content'
-export type { AccordionProps } from './types/accordion'
-export type { AccordionItemProps } from './types/accordion-item'
-export type { AccordionTriggerProps } from './types/accordion-trigger'
-export type { AccordionContentProps } from './types/accordion-content'
+export { Accordion } from "./components/accordion"
+export { AccordionContent } from "./components/accordion-content"
+export { AccordionItem } from "./components/accordion-item"
+export { AccordionRoot } from "./components/accordion-root"
+export { AccordionTrigger } from "./components/accordion-trigger"
+export type { AccordionContentProps } from "./types/accordion-content"
+export type { AccordionItemProps } from "./types/accordion-item"
+export type { AccordionRootProps } from "./types/accordion-root"
+export type { AccordionTriggerProps } from "./types/accordion-trigger"
