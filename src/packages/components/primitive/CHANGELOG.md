@@ -12,3 +12,9 @@
 ### Patch changes
 
 - Rename r to R for better indication of component & editor autocompletion
+
+## 1.0.2
+
+### Patch changes
+
+- Exported PrimitiveProps type
