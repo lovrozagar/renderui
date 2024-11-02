@@ -29,7 +29,7 @@
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "name": "@renderui/toggle-group-qa",
+  "name": "@renderui/toggle-group",
   "peerDependencies": {
     "@renderui/utils": ">=0.3.2",
     "@renderui/button": ">=1.0.5",
