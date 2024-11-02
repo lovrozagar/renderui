@@ -1,3 +1,5 @@
+"use client"
+
 import { AccordionContent } from "./accordion-content"
 import { AccordionItem } from "./accordion-item"
 import { AccordionRoot } from "./accordion-root"
