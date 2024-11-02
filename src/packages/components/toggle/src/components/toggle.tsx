@@ -34,7 +34,7 @@ const Toggle = (props: ToggleProps) => {
         {...restProps}
       >
         {typeof children === "function"
-          ? ({ isPressed, isKeyboardPressed }) => children({ isPressed, isKeyboardPressed, isOn })
+          ? ({ loaderProps: _, ...restProps }) => children({ ...restProps, isOn })
           : children}
       </Button>
     </TogglePrimitive>
