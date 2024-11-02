@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@renderui/utils": ">=0.3.2",
-    "@renderui/button": ">=1.0.4",
+    "@renderui/button": ">=1.0.5",
     "bunchee": "^5.5.1",
     "react": "19.0.0-rc-a960b92c-20240819",
     "react-dom": "19.0.0-rc-a960b92c-20240819",
@@ -32,7 +32,7 @@
   "name": "@renderui/toggle",
   "peerDependencies": {
     "@renderui/utils": ">=0.3.2",
-    "@renderui/button": ">=1.0.4",
+    "@renderui/button": ">=1.0.5",
     "react": ">=18",
     "react-dom": ">=18"
   },
@@ -50,5 +50,5 @@
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
