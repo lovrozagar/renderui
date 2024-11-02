@@ -5,3 +5,9 @@
 ### Patch changes
 
 - Added container component
+
+## 1.0.1
+
+### Patch changes
+
+- Fixed package build
