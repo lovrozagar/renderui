@@ -18,3 +18,9 @@
 ### Patch changes
 
 - Exported PrimitiveProps type
+
+## 1.0.3
+
+### Patch changes
+
+- Fixed className prop type CxOptions[] -> CxOptions
