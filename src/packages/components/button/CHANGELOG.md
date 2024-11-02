@@ -31,3 +31,10 @@
 ### Patch changes
 
 - Change className prop type to ClassValue instead of string
+
+## 1.0.5
+
+### Patch changes
+
+- Add isFocused, isFocusVisible to render props
+- Remove Ripple from render props
