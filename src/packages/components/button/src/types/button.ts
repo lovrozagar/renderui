@@ -1,46 +1,39 @@
 import type { UseAriaHandlersProps } from "@renderui/hooks-internal"
-import type { Ripple, RippleProps } from "@renderui/ripple"
+import type { RippleProps } from "@renderui/ripple"
 import type { ClassNameProps, Color, PolymorphicProps, Simplify } from "@renderui/utils"
 import type { ComponentPropsWithRef, ReactNode } from "react"
 import type { ButtonClassesProps } from "../classes/button-classes"
-import type { GetLoaderPropsReturn } from "../utils/get-loader-props"
+import type { useButton } from "../hooks/use-button"
 
-type ButtonPrimitiveProps = Omit<ComponentPropsWithRef<"button">, "className" | "children" | "disabled" | "color">
+type ButtonPrimitiveProps = Omit<
+  ComponentPropsWithRef<"button">,
+  "className" | "children" | "disabled" | "color"
+>
 
-type ButtonRenderPropsProps = {
-  isPressed: boolean
-  isKeyboardPressed: boolean
-  Ripple: typeof Ripple
-}
+type ButtonRenderProps = ReturnType<typeof useButton>['utility']['renderProps']
 
-type ButtonRenderProps = ((props: ButtonRenderPropsProps) => ReactNode) | ReactNode
+type ButtonRenderPropsFn = ((props: ButtonRenderProps) => ReactNode) | ReactNode
 
 type LoaderPosition = "start" | "end"
 
-type ButtonLoaderRenderPropsProps = Omit<ButtonRenderPropsProps, "Ripple"> & {
-  loaderProps: GetLoaderPropsReturn
-}
+type ButtonCustomProps = ClassNameProps &
+  ButtonClassesProps &
+  Partial<UseAriaHandlersProps> &
+  PolymorphicProps & {
+    children?: ButtonRenderPropsFn
+    startContent?: ButtonRenderPropsFn
+    endContent?: ButtonRenderPropsFn
+    loadingContent?: ButtonRenderPropsFn
+    isDisabled?: boolean
+    isLoading?: boolean
+    loaderPosition?: LoaderPosition
+    loader?: ButtonRenderPropsFn
+    color?: Color
+    hasRipple?: boolean
+    rippleProps?: RippleProps
+    subLayerProps?: RippleProps["subLayerProps"]
+  }
 
-type ButtonLoaderRenderProps = ((props: ButtonLoaderRenderPropsProps) => ReactNode) | ReactNode
+type ButtonProps = Simplify<ButtonPrimitiveProps & ButtonCustomProps>
 
-type ButtonCustomProps = ClassNameProps & ButtonClassesProps & Partial<UseAriaHandlersProps> & PolymorphicProps &  {
-  children?: ButtonRenderProps
-  startContent?: ButtonRenderProps
-  endContent?: ButtonRenderProps
-  loadingContent?: ButtonRenderProps
-  isDisabled?: boolean
-  isLoading?: boolean
-  loaderPosition?: LoaderPosition
-  loader?: ButtonLoaderRenderProps
-  color?: Color
-  hasRipple?: boolean
-  rippleProps?: RippleProps
-  subLayerProps?: RippleProps["subLayerProps"]
-}
-
-type ButtonProps = Simplify<
-  ButtonPrimitiveProps &
-    ButtonCustomProps
->
-
-export type { ButtonProps, ButtonClassesProps }
+export type { ButtonProps, ButtonRenderProps, ButtonRenderPropsFn }

@@ -19,12 +19,9 @@ const Button = (props: ButtonProps) => {
 
   const { buttonProps, subLayerProps, rippleProps, utility } = useButton(restButtonProps)
 
-  const { isPressed, isKeyboardPressed, isLoading, loaderPosition, loaderProps } = utility
+  const { isLoading, loaderPosition, renderProps } = utility
 
   const Component = polymorphic(asChild, "button")
-
-  const renderProps = { isKeyboardPressed, isPressed, Ripple }
-  const loaderRenderProps = { isKeyboardPressed, isPressed, loaderProps }
 
   const getChildren = () => {
     const content = props[isLoading && loadingContent ? "loadingContent" : "children"]
@@ -39,11 +36,11 @@ const Button = (props: ButtonProps) => {
       <>
         {renderProp(startContent, renderProps)}
 
-        {isLoading && loaderPosition === "start" ? renderProp(loader, loaderRenderProps) : null}
+        {isLoading && loaderPosition === "start" ? renderProp(loader, renderProps) : null}
 
         {renderProp(children, renderProps)}
 
-        {isLoading && loaderPosition === "end" ? renderProp(loader, loaderRenderProps) : null}
+        {isLoading && loaderPosition === "end" ? renderProp(loader, renderProps) : null}
 
         {renderProp(endContent, renderProps)}
 

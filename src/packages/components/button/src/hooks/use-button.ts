@@ -64,7 +64,6 @@ function useButton(
     },
     internalRef,
   )
-  const { isPressed, isKeyboardPressed } = ariaFlags
 
   return {
     buttonProps: {
@@ -104,11 +103,15 @@ function useButton(
     subLayerProps,
     rippleProps: getRippleProps({ rippleProps, isLoading }),
     utility: {
-      isPressed,
-      isKeyboardPressed,
       isLoading,
       loaderPosition,
-      loaderProps: getLoaderProps({ isLoading }),
+      renderProps: {
+        isPressed: ariaFlags.isPressed,
+        isKeyboardPressed: ariaFlags.isKeyboardPressed,
+        isFocused: ariaFlags.isFocused,
+        isFocusVisible: ariaFlags.isFocusVisible,
+        loaderProps: getLoaderProps({ isLoading }),
+      },
     },
   }
 }
