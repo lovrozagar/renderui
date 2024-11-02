@@ -6,3 +6,9 @@
 
 - Added accordion separate components
 - Added accordion compound component
+
+## 1.0.1
+
+### Patch changes
+
+- Fixed Accordion compound component not being a client component
