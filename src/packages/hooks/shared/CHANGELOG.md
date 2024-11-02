@@ -4,7 +4,7 @@
 
 ### Patch changes
 
-- Added useFreshRef and useMutationObserverHooks, refactor from @renderui/core
+- Added useFreshRef and useMutationObserver hooks, refactor from @renderui/core
 
 ## 1.0.1
 
@@ -17,3 +17,9 @@
 ### Patch changes
 
 - Set useMutationObserver enabled property true by default
+
+## 1.0.4
+
+### Patch changes
+
+- add useEventListener hook
