@@ -14,6 +14,7 @@ const Container = <T extends keyof React.JSX.IntrinsicElements = "div">(
 
   return (
     <Primitive
+      data-slot="container"
       className={[
         DEFAULT_CONTAINER_CLASSNAME,
         isFullHeight ? CONTAINER_FULL_HEIGHT_CLASSNAME : undefined,
