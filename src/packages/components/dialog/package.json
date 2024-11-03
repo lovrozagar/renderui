@@ -4,14 +4,15 @@
     "name": "Lovro Žagar"
   },
   "dependencies": {
-    "@radix-ui/react-dialog": "^1.1.2",
-    "@renderui/hooks-internal": "^1.0.3",
-    "@renderui/utils-internal": ">=1.0.2"
+    "@radix-ui/react-dialog": "^1.1.2"
   },
   "devDependencies": {
     "@renderui/utils": ">=0.3.2",
-    "@renderui/button": ">=1.0.5",
     "@renderui/hooks": ">=1.0.4",
+    "@renderui/utils-internal": ">=1.0.2",
+    "@renderui/hooks-internal": ">=1.0.3",
+    "@renderui/button": ">=1.0.5",
+    "@renderui/overlay": ">=1.0.0",
     "bunchee": "^5.5.1",
     "react": "19.0.0-rc-a960b92c-20240819",
     "react-dom": "19.0.0-rc-a960b92c-20240819",
@@ -34,8 +35,11 @@
   "name": "@renderui/dialog",
   "peerDependencies": {
     "@renderui/utils": ">=0.3.2",
-    "@renderui/button": ">=1.0.5",
     "@renderui/hooks": ">=1.0.4",
+    "@renderui/utils-internal": ">=1.0.2",
+    "@renderui/hooks-internal": ">=1.0.3",
+    "@renderui/button": ">=1.0.5",
+    "@renderui/overlay": ">=1.0.0",
     "react": ">=18",
     "react-dom": ">=18"
   },
