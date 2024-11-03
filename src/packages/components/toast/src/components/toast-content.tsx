@@ -58,6 +58,7 @@ const ToastContent = (props: ToastContentProps) => {
 
   return (
     <div
+      data-slot="toast-container"
       className={cn(
         DEFAULT_TOAST_CONTAINER_CLASSNAME,
         factoryContainerClassName,
@@ -67,6 +68,7 @@ const ToastContent = (props: ToastContentProps) => {
     >
       {title ? (
         <p
+          data-slot="toast-title"
           className={cn(DEFAULT_TOAST_TITLE_CLASSNAME, factoryTitleClassName, titleClassName)}
           {...restTitleProps}
         >
@@ -75,6 +77,7 @@ const ToastContent = (props: ToastContentProps) => {
       ) : null}
       {description ? (
         <p
+          data-slot="toast-description"
           className={cn(
             DEFAULT_TOAST_DESCRIPTION_CLASSNAME,
             factoryDescriptionClassname,
@@ -87,6 +90,7 @@ const ToastContent = (props: ToastContentProps) => {
       ) : null}
       {actionButtonProps ? (
         <button
+          data-slot="toast-action-button"
           className={cn(DEFAULT_TOAST_ACTION_BUTTON_CLASSNAME, actionButtonClassName)}
           onClick={() => onActionButtonClick(t)}
           {...restActionButtonProps}
@@ -96,6 +100,7 @@ const ToastContent = (props: ToastContentProps) => {
       ) : null}
       {typeof children === "function" ? children(t) : children}
       <button
+        data-slot="toast-close-button"
         className={cn(
           DEFAULT_TOAST_CLOSE_BUTTON_CLASSNAME,
           factoryButtonClassName,
