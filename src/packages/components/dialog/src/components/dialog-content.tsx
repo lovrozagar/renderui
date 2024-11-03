@@ -7,6 +7,7 @@ import {
 } from "@radix-ui/react-dialog"
 import { Button } from "@renderui/button"
 import { useEventListener, useMergedRef } from "@renderui/hooks"
+import { Overlay } from "@renderui/overlay"
 import { cn, getOptionalObject } from "@renderui/utils"
 import { getAnimationStyleVariables } from "@renderui/utils-internal"
 import { useRef } from "react"
@@ -26,6 +27,7 @@ const DialogContent = (props: DialogContentProps) => {
     children,
     closeButtonProps,
     closeButtonIconProps,
+    overlayProps,
     animationDuration,
     animationInDuration,
     animationOutDuration,
@@ -33,6 +35,7 @@ const DialogContent = (props: DialogContentProps) => {
     animationInTimingFunction,
     animationOutTimingFunction,
     onPointerDownOutside,
+    hasOverlay = true,
     hasCloseButton = true,
     ...restProps
   } = props
@@ -75,8 +78,9 @@ const DialogContent = (props: DialogContentProps) => {
 
   return (
     <DialogPortalPrimitive>
-      {/* <Overlay /> */}
+      {hasOverlay ? <Overlay data-slot="dialog-overlay" {...overlayProps} /> : null}
       <DialogContentPrimitive
+        data-slot="dialog-content"
         ref={mergedRefCallback}
         className={cn(DFEAULT_DIALOG_CONTENT_CLASSNAME, className)}
         style={{
@@ -98,6 +102,7 @@ const DialogContent = (props: DialogContentProps) => {
         {hasCloseButton ? (
           <DialogClosePrimitive asChild>
             <Button
+              data-slot="dialog-close-button"
               variant={variant}
               color={color}
               className={[DEFAULT_DIALOG_CLOSE_BUTTON_CLASSNAME, closeButtonClassName]}
