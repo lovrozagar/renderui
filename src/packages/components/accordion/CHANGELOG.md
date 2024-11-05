@@ -12,3 +12,10 @@
 ### Patch changes
 
 - Fixed Accordion compound component not being a client component
+
+## 1.0.2
+
+### Patch changes
+
+- Exported AccordionTriggerPrimitive
+- Refactored exports to support compound components on the server
