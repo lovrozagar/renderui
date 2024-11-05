@@ -1,9 +1,5 @@
-export { Accordion } from "./components/accordion"
-export { AccordionContent } from "./components/accordion-content"
-export { AccordionItem } from "./components/accordion-item"
-export { AccordionRoot } from "./components/accordion-root"
-export { AccordionTrigger } from "./components/accordion-trigger"
-export type { AccordionContentProps } from "./types/accordion-content"
-export type { AccordionItemProps } from "./types/accordion-item"
-export type { AccordionRootProps } from "./types/accordion-root"
-export type { AccordionTriggerProps } from "./types/accordion-trigger"
+export * from './exports.separate'
+
+import * as Accordion from './exports.compound'
+
+export { Accordion }
