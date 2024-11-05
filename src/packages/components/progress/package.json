@@ -27,7 +27,7 @@
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "name": "@renderui/progress-qa",
+  "name": "@renderui/progress",
   "peerDependencies": {
     "@renderui/utils": ">=0.3.2",
     "react": ">=18",
