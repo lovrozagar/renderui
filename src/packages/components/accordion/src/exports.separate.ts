@@ -1,4 +1,3 @@
-export { Accordion } from "./components/accordion"
 export { AccordionContent } from "./components/accordion-content"
 export { AccordionItem } from "./components/accordion-item"
 export { AccordionRoot } from "./components/accordion-root"
