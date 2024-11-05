@@ -1,5 +1,5 @@
 import type { PopoverContent as PopoverContentPrimitive } from "@radix-ui/react-popover"
-import type { Simplify } from "@renderui/utils"
+import type { ClassNameProps, Simplify } from "@renderui/utils"
 import type { AnimationStyleVariables } from "@renderui/utils-internal"
 import type React from "react"
 import type { PopoverContentArrowProps } from "./popover-content-arrow"
@@ -8,10 +8,11 @@ type PopoverContentPrimitiveType = typeof PopoverContentPrimitive
 
 type PopoverContentPrimitiveProps = Omit<
   React.ComponentPropsWithRef<PopoverContentPrimitiveType>,
-  "onPointerDownOutside" | "onFocusOutside" | "onInteractOutside"
+  "className" | "onPointerDownOutside" | "onFocusOutside" | "onInteractOutside"
 >
 
-type PopoverContentCustomProps = AnimationStyleVariables &
+type PopoverContentCustomProps = ClassNameProps &
+  AnimationStyleVariables &
   PopoverContentArrowProps & {
     portalContainer?: HTMLElement | null | undefined
     hasTriggerHeight?: boolean

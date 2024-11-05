@@ -38,5 +38,3 @@ const PopoverContentArrow = (props: PopoverContentArrowProps) => {
 }
 
 export { PopoverContentArrow }
-
-export type { PopoverContentArrowProps }
