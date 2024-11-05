@@ -1,4 +1,4 @@
-import { initializeContext } from "@renderui/utils"
+import { createContext } from "@radix-ui/react-context"
 import type { Dispatch, RefObject, SetStateAction } from "react"
 
 type DialogContext = {
@@ -7,8 +7,6 @@ type DialogContext = {
   setOpen: Dispatch<SetStateAction<boolean>>
 }
 
-const [DialogProvider, useDialogContext] = initializeContext<DialogContext>({
-  name: "Dialog",
-})
+const [DialogProvider, useDialogContext] = createContext<DialogContext>('Dialog')
 
 export { DialogProvider, useDialogContext }

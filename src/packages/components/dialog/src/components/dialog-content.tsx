@@ -54,7 +54,7 @@ const DialogContent = (props: DialogContentProps) => {
   const contentRef = useRef<HTMLDivElement | null>(null)
   const mergedRefCallback = useMergedRef([ref, contentRef])
 
-  const { triggerRef, open, setOpen } = useDialogContext()
+  const { triggerRef, open, setOpen } = useDialogContext("DialogContent")
 
   /* on outside pointer down capture, close popover */
   /* react-aria press event support inside content */
