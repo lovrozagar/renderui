@@ -1,9 +1,5 @@
-export { Collapsible } from "./components/collapsible"
-export { CollapsibleContent } from "./components/collapsible-content"
-export { CollapsibleRoot } from "./components/collapsible-root"
-export { CollapsibleTrigger } from "./components/collapsible-trigger"
-export { CollapsibleTriggerPrimitive } from "./components/collapsible-trigger-primitive"
-export type { CollapsibleContentProps } from "./types/collapsible-content"
-export type { CollapsibleRootProps } from "./types/collapsible-root"
-export type { CollapsibleTriggerProps } from "./types/collapsible-trigger"
-export type { CollapsibleTriggerPrimitiveProps } from "./types/collapsible-trigger-primitive"
+export * from './exports.separate'
+
+import * as Collapsible from './exports.compound'
+
+export { Collapsible }
