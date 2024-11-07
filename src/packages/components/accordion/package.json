@@ -5,7 +5,6 @@
   },
   "dependencies": {
     "@radix-ui/react-accordion": ">=1.2.1",
-    "@renderui/hooks-internal": ">=1.0.3",
     "@renderui/utils-internal": ">=1.0.2"
   },
   "devDependencies": {
@@ -55,5 +54,5 @@
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.2"
+  "version": "1.0.3"
 }

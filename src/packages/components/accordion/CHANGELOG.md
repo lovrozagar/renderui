@@ -19,3 +19,9 @@
 
 - Exported AccordionTriggerPrimitive
 - Refactored exports to support compound components on the server
+
+## 1.0.3
+
+### Patch changes
+
+- Swaped controllable state dependency to use the same one as primitives
