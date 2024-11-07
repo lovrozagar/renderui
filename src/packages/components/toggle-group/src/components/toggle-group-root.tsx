@@ -1,7 +1,7 @@
 "use client"
 
 import { ToggleGroup as ToggleGroupPrimitive } from "@radix-ui/react-toggle-group"
-import { useControlledState } from "@renderui/hooks-internal"
+import { useControllableState } from "@radix-ui/react-use-controllable-state"
 import { cn, noop } from "@renderui/utils"
 import { DEFAULT_TOGGLE_GROUP_CLASSNAME } from "../constants/constants"
 import { ToggleGroupProvider } from "../contexts/toggle-group-context"
@@ -21,12 +21,12 @@ const ToggleGroupRoot = <T extends ToggleGroupRootType, V extends string | numbe
     onValueChange = noop,
     color = "primary",
     type = "multiple",
-    defaultValue = type === 'multiple' ? [] : undefined,
+    defaultValue = type === "multiple" ? [] : undefined,
     ...restProps
   } = props
 
   /* biome-ignore lint/suspicious/noExplicitAny: cast as any for primitive compatiblity */
-  const [value, setValue] = useControlledState<any>({
+  const [value, setValue] = useControllableState<any>({
     prop: valueProp,
     defaultProp: defaultValue,
     onChange: onValueChange,
@@ -41,7 +41,7 @@ const ToggleGroupRoot = <T extends ToggleGroupRootType, V extends string | numbe
       className={cn(DEFAULT_TOGGLE_GROUP_CLASSNAME, className)}
       {...restProps}
     >
-      <ToggleGroupProvider value={{ value, color }}>
+      <ToggleGroupProvider color={color} value={value}>
         {typeof children === "function"
           ? children({
               value: value as ToggleGroupRootRenderProps<T, V>["value"],

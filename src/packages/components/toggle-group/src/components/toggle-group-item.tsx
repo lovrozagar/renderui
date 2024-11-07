@@ -17,19 +17,19 @@ const ToggleGroupItem = (props: ToggleGroupItemProps) => {
     children,
     color,
     variant,
-    offVariant = 'text',
-    onVariant = 'solid',
+    offVariant = "text",
+    onVariant = "solid",
     hasToggledOffRing = false,
     ...restProps
   } = props
 
-  const { value: rootValue, color: rootColor } = useToggleGroupContext()
+  const { value: rootValue, color: rootColor } = useToggleGroupContext("ToggleGroupItem")
 
   const isOn = Array.isArray(rootValue)
-  /* (multiple type), empty array enforced by default, check if item is included */
-  ? (rootValue as Array<string | number>).includes(value)
-  /* (single type) check that value is exact match to root value (string or number excluding NaN)  */
-  : (typeof rootValue === "string" || (typeof rootValue === "number" && !Number.isNaN(rootValue))) 
+    ? /* (multiple type), empty array enforced by default, check if item is included */
+      (rootValue as Array<string | number>).includes(value)
+    : /* (single type) check that value is exact match to root value (string or number excluding NaN)  */
+      typeof rootValue === "string" || (typeof rootValue === "number" && !Number.isNaN(rootValue))
 
   return (
     <ToggleGroupItemPrimitive asChild value={value as string}>
