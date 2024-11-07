@@ -46,9 +46,10 @@ const Aria = (props: AriaProps) => {
 
   return (
     <Component
+      data-slot='aria'
+      data-disabled={isDisabled}
       ref={mergedRefCallback as (instance: HTMLDivElement | null) => void}
       className={cn(DEFAULT_ARIA_CLASSNAME, className)}
-      data-disabled={isDisabled}
       {...restNonAriaProps}
       {...ariaComponentProps}
     />
