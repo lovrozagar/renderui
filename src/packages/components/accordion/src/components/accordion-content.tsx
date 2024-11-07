@@ -65,6 +65,4 @@ const AccordionContent = (props: AccordionContentProps) => {
   )
 }
 
-AccordionContent.displayName = "AccordionContent"
-
 export { AccordionContent }

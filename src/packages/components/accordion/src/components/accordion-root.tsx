@@ -1,7 +1,7 @@
 "use client"
 
 import { Accordion as AccordionPrimitive } from "@radix-ui/react-accordion"
-import { useControlledState } from "@renderui/hooks-internal"
+import { useControllableState } from '@radix-ui/react-use-controllable-state'
 import { cn } from "@renderui/utils"
 import { DEFAULT_ACCORDION_CLASSNAME } from "../constants/constants"
 import type {
@@ -24,7 +24,7 @@ const AccordionRoot = <T extends AccordionRootType, V extends string | number>(
   } = props
 
   /* biome-ignore lint/suspicious/noExplicitAny: cast as any for primitive compatiblity */
-  const [value, setValue] = useControlledState<any>({
+  const [value, setValue] = useControllableState<any>({
     prop: valueProp,
     defaultProp: defaultValue,
     onChange: onValueChange as (state: string | string[] | number | number[]) => void,
