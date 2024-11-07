@@ -8,23 +8,23 @@ import { useDialogContext } from "../contexts/dialog-context"
 import type { DialogTriggerProps } from "../types/dialog-trigger"
 
 const DialogTrigger = (props: DialogTriggerProps) => {
-  const { ref, className, variant = "plain", ...restProps } = props
+	const { ref, className, variant = "plain", ...restProps } = props
 
-  const { triggerRef } = useDialogContext('DialogTrigger')
+	const { triggerRef } = useDialogContext("DialogTrigger")
 
-  const mergedRefCallback = useMergedRef<HTMLButtonElement>([ref, triggerRef])
+	const mergedRefCallback = useMergedRef<HTMLButtonElement>([ref, triggerRef])
 
-  return (
-    <DialogTriggerPrimitive asChild>
-      <Button
-        data-slot="dialog-trigger"
-        ref={mergedRefCallback}
-        variant={variant}
-        className={[DEFAULT_DIALOG_TRIGGER_CLASSNAME, className]}
-        {...restProps}
-      />
-    </DialogTriggerPrimitive>
-  )
+	return (
+		<DialogTriggerPrimitive asChild>
+			<Button
+				data-slot="dialog-trigger"
+				ref={mergedRefCallback}
+				variant={variant}
+				className={[DEFAULT_DIALOG_TRIGGER_CLASSNAME, className]}
+				{...restProps}
+			/>
+		</DialogTriggerPrimitive>
+	)
 }
 
 export { DialogTrigger }
