@@ -1,5 +1,3 @@
-"use client"
-
 import { cn, polymorphic } from "@renderui/utils"
 import { loaderClasses } from "../classes/loader-classes"
 import { LOADER_DOTS } from "../constants/constants"
@@ -35,10 +33,11 @@ const Loader = (props: LoaderProps) => {
       )}
       {...restProps}
     >
-      {Boolean(variant === "dots") &&
-        LOADER_DOTS.map((element) => (
-          <LoaderDot key={element} isPaused={isPaused} element={element} {...dotProps} />
-        ))}
+      {variant === "dots"
+        ? LOADER_DOTS.map((element) => (
+            <LoaderDot key={element} isPaused={isPaused} element={element} {...dotProps} />
+          ))
+        : null}
     </Component>
   )
 }
