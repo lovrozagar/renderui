@@ -1,5 +1,5 @@
 const DEFAULT_CHECKBOX_CLASSNAME =
-	"_checkbox p-0.5 bg-transparent rounded-md min-w-0 h-fit w-fit aspect-square shrink-0 text-white data-[state=checked]:bg-primary data-[invalid=true]:ring data-[invalid=true]:ring-destructive"
+	"_checkbox p-0.5 bg-transparent rounded-md min-w-0 h-fit w-fit aspect-square shrink-0 text-white data-[state=checked]:bg-primary data-[invalid=true]:data-[focus-visible=true]:ring-destructive"
 
 const DEFAULT_CHECKBOX_INDICATOR_CLASSNAME =
 	"_checkbox-indicator h-[0.85rem] w-[0.85rem] stroke-white stroke-[2.5]"

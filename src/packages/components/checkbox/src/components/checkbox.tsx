@@ -27,6 +27,7 @@ const Checkbox = (props: CheckboxProps) => {
     children,
     animationDuration,
     indicatorProps,
+    color,
     onCheckedChange,
     onPress,
     hasRipple = false,
@@ -84,6 +85,7 @@ const Checkbox = (props: CheckboxProps) => {
       role="checkbox"
       variant="outline"
       value={checked ? "on" : "off"}
+      color={isInvalid ? "destructive": color}
       aria-checked={checked}
       aria-disabled={isDisabled}
       aria-readonly={isReadOnly}
