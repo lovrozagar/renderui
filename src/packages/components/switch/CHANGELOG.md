@@ -5,3 +5,9 @@
 ### Patch changes
 
 - Added switch component
+
+## 1.0.1
+
+### Patch changes
+
+- Added destructive ring on invalid state
