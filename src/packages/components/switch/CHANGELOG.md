@@ -11,3 +11,10 @@
 ### Patch changes
 
 - Added destructive ring on invalid state
+
+## 1.0.2
+
+### Patch changes
+
+- Fix destructive ring offset & visibility
+  
