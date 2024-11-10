@@ -4,14 +4,14 @@ import { useMergedRef } from "@renderui/hooks"
 import { useAriaHandlers } from "@renderui/hooks-internal"
 import { cn, polymorphic } from "@renderui/utils"
 import { splitAriaProps } from "@renderui/utils-internal"
-import React from "react"
+import { useRef } from "react"
 import { DEFAULT_ARIA_CLASSNAME } from "../constants/constants"
 import type { AriaProps } from "../types/aria"
 
 const Aria = (props: AriaProps) => {
   const { ariaProps, nonAriaProps } = splitAriaProps(props)
 
-  const internalRef = React.useRef<HTMLElement>(null)
+  const internalRef = useRef<HTMLElement>(null)
   const mergedRefCallback = useMergedRef<HTMLElement>([internalRef, nonAriaProps.ref])
 
   const {
