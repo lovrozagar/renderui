@@ -22,4 +22,10 @@
 
 ### Patch changes
 
-- add useEventListener hook
+- Added useEventListener hook
+
+## 1.0.5
+
+### Patch changes
+
+- Added useOnClickOutside hook
