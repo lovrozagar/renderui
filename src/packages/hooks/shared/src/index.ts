@@ -5,3 +5,7 @@ export {
   useMutationObserver,
   type UseMutationObserverProps,
 } from "./use-mutation-observer/use-mutation-observer"
+export {
+  useOnClickOutside,
+  type UseOnClickOutsideProps
+} from "./use-on-click-outside/use-on-click-outside"
