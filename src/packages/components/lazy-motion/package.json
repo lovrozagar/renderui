@@ -3,32 +3,37 @@
     "email": "lovro.zagar5@gmail.com",
     "name": "Lovro Žagar"
   },
-  "devDependencies": {
-    "bunchee": "^5.5.1",
-    "framer-motion": "^11.11.10",
-    "react": "19.0.0-rc-a960b92c-20240819",
-    "react-dom": "19.0.0-rc-a960b92c-20240819",
-    "types-react": "^19.0.0-rc.1",
-    "types-react-dom": "^19.0.0-rc.1",
-    "typescript": "^5.5.4"
+  "bugs": {
+    "url": "https://github.com/renderui/issues"
   },
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts"
       }
     }
   },
-  "files": ["dist"],
+  "files": ["dist", "README.md"],
+  "homepage": "https://renderui.org",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "name": "@renderui/lazy-motion",
   "peerDependencies": {
-    "framer-motion": ">=11.11.10",
-    "react": ">=18",
-    "react-dom": ">=18"
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "framer-motion": "^11.0",
+    "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+    "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
   },
   "private": false,
   "publishConfig": {
@@ -44,5 +49,5 @@
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.2"
+  "version": "1.0.3"
 }

@@ -19,3 +19,10 @@
 
 - Add "use client" directive to providers
 - Fix feature lazy import functions
+
+## 1.0.3
+
+### Patch changes
+
+- Removed compound provider
+- Updated package.json
