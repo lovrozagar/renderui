@@ -7,7 +7,7 @@
     "url": "https://github.com/renderui/issues"
   },
   "dependencies": {
-    "@radix-ui/react-compose-refs": "^1.1.0",
+    "@radix-ui/react-compose-refs": "latest",
     "@renderui/hooks": "*",
     "@renderui/hooks-internal": "*",
     "@renderui/ripple": "*",
@@ -57,5 +57,5 @@
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.5"
+  "version": "1.0.6"
 }
