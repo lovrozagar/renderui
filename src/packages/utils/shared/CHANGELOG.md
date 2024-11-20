@@ -56,3 +56,11 @@
 ### Patch changes
 
 - Added initialize context helper
+
+## 0.3.3
+
+### Patch changes
+
+- Remove initializeContext utility
+- Remove composeEventHandlers
+- Instead use @radix-ui/react-context & @radix-ui/react-compose-event-handlers
