@@ -3,6 +3,8 @@ import type { ComponentPropsWithRef } from "react"
 
 type SubLayerPrimitiveProps = Omit<ComponentPropsWithRef<"span">, "className">
 
-type SubLayerProps = Simplify<SubLayerPrimitiveProps & ClassNameProps & PolymorphicProps>
+type SubLayerCustomProps = ClassNameProps & PolymorphicProps
+
+type SubLayerProps = Simplify<SubLayerPrimitiveProps & SubLayerCustomProps>
 
 export type { SubLayerProps }
