@@ -1,4 +1,4 @@
-import { useMergedRef } from "@renderui/hooks"
+import { useComposedRefs } from "@radix-ui/react-compose-refs"
 import { useAriaHandlers } from "@renderui/hooks-internal"
 import { chain, cn } from "@renderui/utils"
 import { splitAriaProps } from "@renderui/utils-internal"
@@ -50,7 +50,7 @@ function useButton(
   } = nonAriaProps
 
   const internalRef = useRef<HTMLButtonElement>(null)
-  const mergedRefs = useMergedRef<HTMLButtonElement>([internalRef, ref])
+  const mergedRefs = useComposedRefs<HTMLButtonElement>(internalRef, ref)
 
   const isPressDisabled = isDisabled || ariaProps?.isPressDisabled || isLoading
   const isHoverDisabled = isDisabled || ariaProps?.isHoverDisabled || isLoading
