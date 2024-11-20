@@ -1,13 +1,13 @@
 "use client"
 
-import { useEffect } from "react"
+import { type RefObject, useEffect } from "react"
 import { useFreshRef } from "../use-fresh-ref/use-fresh-ref"
 
 /* MediaQueryList Event based useEventListener interface */
 function useEventListener<K extends keyof MediaQueryListEventMap>(props: {
   event: K
   handler: (event: MediaQueryListEventMap[K]) => void
-  element: MediaQueryList
+  element: RefObject<MediaQueryList>
   enabled?: boolean
   options?: boolean | AddEventListenerOptions
 }): void
@@ -24,7 +24,7 @@ function useEventListener<K extends keyof WindowEventMap>(props: {
 /* Element Event based useEventListener interface */
 function useEventListener<
   K extends keyof HTMLElementEventMap,
-  T extends HTMLElement = HTMLDivElement,
+  T extends RefObject<HTMLElement | null>,
 >(props: {
   event: K
   handler: (event: HTMLElementEventMap[K]) => void
@@ -37,7 +37,7 @@ function useEventListener<
 function useEventListener<K extends keyof DocumentEventMap>(props: {
   event: K
   handler: (event: DocumentEventMap[K]) => void
-  element: Document
+  element: RefObject<Document>
   enabled?: boolean
   options?: boolean | AddEventListenerOptions
 }): void
@@ -46,11 +46,10 @@ function useEventListener<
   KW extends keyof WindowEventMap,
   KH extends keyof HTMLElementEventMap,
   KM extends keyof MediaQueryListEventMap,
-  /* biome-ignore lint/suspicious/noConfusingVoidType: allow void */
-  T extends HTMLElement | MediaQueryList | void = void,
+  T extends HTMLElement | SVGAElement | MediaQueryList = HTMLElement,
 >(props: {
   event: KW | KH | KM
-  element?: T
+  element?: RefObject<T>
   options?: boolean | AddEventListenerOptions
   enabled?: boolean
   handler: (
@@ -65,8 +64,8 @@ function useEventListener<
   /* biome-ignore lint/correctness/useExhaustiveDependencies: using fresh ref pattern, ref dep not needed */
   useEffect(() => {
     /* Define the listening target */
-    const targetElement: T | HTMLElement | null =
-      element ?? (typeof window !== "undefined" ? window.document.documentElement : null)
+    const targetElement =
+      element?.current ?? (typeof window !== "undefined" ? window.document.documentElement : null)
 
     if (!targetElement?.addEventListener) return undefined
 

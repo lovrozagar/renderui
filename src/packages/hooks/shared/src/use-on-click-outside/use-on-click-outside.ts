@@ -1,11 +1,12 @@
 "use client"
 
+import type { RefObject } from "react"
 import { useEventListener } from "../use-event-listener/use-event-listener"
 
 const DEFAULT_EXCEPTION_SELECTORS: string[] = []
 
 type UseOnClickOutsideProps<T extends HTMLElement = HTMLElement> = {
-  element: T | null
+  element: RefObject<T | null>
   exceptionSelectors?: string[]
 } & (
   | {
@@ -23,13 +24,15 @@ function useOnClickOutside<T extends HTMLElement = HTMLElement>(props: UseOnClic
 
   useEventListener({
     event,
-    element: element,
+    element,
     handler: (event) => {
       if (!(event.target instanceof Node)) {
         return
       }
 
-      if (!handler || element?.contains(event.target)) {
+      const currentElement = element.current
+
+      if (!handler || currentElement?.contains(event.target)) {
         return
       }
 
