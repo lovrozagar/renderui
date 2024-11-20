@@ -18,3 +18,9 @@
 
 - Added useUncontrolledState hook
 - Added useControlledState hook
+
+## 1.0.4
+
+### Patch changes
+
+- Removed useUncontrolledState and useControlledState, use directly from @radix-ui/react-use-controllable-state instead
