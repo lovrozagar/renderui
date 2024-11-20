@@ -29,3 +29,9 @@
 ### Patch changes
 
 - Added useOnClickOutside hook
+
+## 1.0.6
+
+### Patch changes
+
+- Changed hooks to accept RefObject instead of an element, fixes element being null initially
