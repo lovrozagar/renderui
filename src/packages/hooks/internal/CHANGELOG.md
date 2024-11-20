@@ -24,3 +24,9 @@
 ### Patch changes
 
 - Removed useUncontrolledState and useControlledState, use directly from @radix-ui/react-use-controllable-state instead
+
+## 1.0.5
+
+### Patch changes
+
+- Fixed workspace dependencies not being recognized
