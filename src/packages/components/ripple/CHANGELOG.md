@@ -24,3 +24,10 @@
 ### Patch changes
 
 - Change className prop type to ClassValue instead of string
+
+## 1.0.4
+
+### Patch changes
+
+- Keyboard ripple update
+- Refactored to use renderui deps instead of peer deps

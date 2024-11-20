@@ -45,7 +45,7 @@ function useKeyboardRipple<T extends HTMLElement>(
   const parentRef = ref.current?.parentElement ?? null
 
   useMutationObserver({
-    node: parentRef,
+    element: { current: parentRef },
     options: KEYBOARD_RIPPLE_MUTATION_OBSERVER_OPTIONS,
     callback: mutationHandler,
   })
