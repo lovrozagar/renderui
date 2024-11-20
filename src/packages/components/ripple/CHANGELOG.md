@@ -31,3 +31,9 @@
 
 - Keyboard ripple update
 - Refactored to use renderui deps instead of peer deps
+
+## 1.0.5
+
+### Patch changes
+
+- Memoized ripple parent element used for keyboard ripple
