@@ -35,3 +35,9 @@
 ### Patch changes
 
 - Changed hooks to accept RefObject instead of an element, fixes element being null initially
+
+## 1.0.7
+
+### Patch changes
+
+- Fixed exports
