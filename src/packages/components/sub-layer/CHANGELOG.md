@@ -24,3 +24,9 @@
 ### Patch changes
 
 - Change className prop type to ClassValue instead of string
+
+## 1.0.5
+
+### Patch changes
+
+- Fixed workspace dependencies not being recognized
