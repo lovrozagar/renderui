@@ -1,5 +1,5 @@
 import { useMutationObserver } from "@renderui/hooks"
-import { type Dispatch, type RefObject, type SetStateAction, useCallback } from "react"
+import { type Dispatch, type RefObject, type SetStateAction, useCallback, useMemo } from "react"
 import {
   KEYBOARD_RIPPLE_DATASET_ATTRIBUTE,
   KEYBOARD_RIPPLE_MUTATION_OBSERVER_OPTIONS,
@@ -42,10 +42,10 @@ function useKeyboardRipple<T extends HTMLElement>(
     [ref, addRippleOnKeyboardPress],
   )
 
-  const parentRef = ref.current?.parentElement ?? null
+  const element = useMemo(() => ({ current: ref.current?.parentElement ?? null }), [ref])
 
   useMutationObserver({
-    element: { current: parentRef },
+    element,
     options: KEYBOARD_RIPPLE_MUTATION_OBSERVER_OPTIONS,
     callback: mutationHandler,
   })
