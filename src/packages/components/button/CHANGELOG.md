@@ -38,3 +38,10 @@
 
 - Add isFocused, isFocusVisible to render props
 - Remove Ripple from render props
+
+## 1.0.6
+
+### Patch changes
+
+- Use radix-ui useComposedRefs to match primitive deps
+- Use renderui deps instead of peer deps

@@ -3,41 +3,45 @@
     "email": "lovro.zagar5@gmail.com",
     "name": "Lovro Žagar"
   },
-  "dependencies": {
-    "@renderui/hooks-internal": ">=1.0.0",
-    "@renderui/utils-internal": ">=1.0.0",
-    "react-aria": ">=3.35.1"
+  "bugs": {
+    "url": "https://github.com/renderui/issues"
   },
-  "devDependencies": {
-    "@renderui/hooks": ">=1.0.3",
-    "@renderui/ripple": ">=1.0.3",
-    "@renderui/utils": ">=0.3.2",
-    "bunchee": "^5.5.1",
-    "react": "19.0.0-rc-a960b92c-20240819",
-    "react-dom": "19.0.0-rc-a960b92c-20240819",
-    "types-react": "^19.0.0-rc.1",
-    "types-react-dom": "^19.0.0-rc.1",
-    "typescript": "^5.5.4"
+  "dependencies": {
+    "@radix-ui/react-compose-refs": "^1.1.0",
+    "@renderui/hooks": "*",
+    "@renderui/hooks-internal": "*",
+    "@renderui/ripple": "*",
+    "@renderui/utils": "*",
+    "@renderui/utils-internal": "*",
+    "react-aria": "latest"
   },
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts"
       }
     }
   },
-  "files": ["dist"],
+  "files": ["dist", "README.md"],
+  "homepage": "https://renderui.org",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "name": "@renderui/button",
   "peerDependencies": {
-    "@renderui/hooks": ">=1.0.3",
-    "@renderui/ripple": ">=1.0.3",
-    "@renderui/utils": ">=0.3.2",
-    "react": ">=18",
-    "react-dom": ">=18"
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+    "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
   },
   "private": false,
   "publishConfig": {
@@ -45,7 +49,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lovrozagar/renderui"
+    "url": "git+https://github.com/lovrozagar/renderui.git"
   },
   "scripts": {
     "build": "bunchee -m"
