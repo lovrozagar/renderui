@@ -1,54 +1,57 @@
-import { useMutationObserver } from "@renderui/hooks"
-import { type Dispatch, type RefObject, type SetStateAction, useCallback, useMemo } from "react"
+import { type Dispatch, type RefObject, type SetStateAction, useCallback, useEffect } from "react"
 import {
-  KEYBOARD_RIPPLE_DATASET_ATTRIBUTE,
-  KEYBOARD_RIPPLE_MUTATION_OBSERVER_OPTIONS,
+	KEYBOARD_RIPPLE_DATASET_ATTRIBUTE,
+	KEYBOARD_RIPPLE_MUTATION_OBSERVER_OPTIONS,
 } from "../constants/constants"
 import type { RippleRipple } from "../types/ripple-ripple"
 import { createRipple } from "../utils/create-ripple"
 
 function useKeyboardRipple<T extends HTMLElement>(
-  ref: RefObject<T>,
-  setRipples: Dispatch<SetStateAction<RippleRipple[]>>,
+	ref: RefObject<T>,
+	setRipples: Dispatch<SetStateAction<RippleRipple[]>>,
 ) {
-  const addRippleOnKeyboardPress = useCallback(
-    (height: number, width: number) => {
-      const newRipple = createRipple({ type: "keyboard", width, height })
+	const addRippleOnKeyboardPress = useCallback(
+		(height: number, width: number) => {
+			const newRipple = createRipple({ type: "keyboard", width, height })
 
-      setRipples((previousRipples) => [...previousRipples, newRipple])
+			setRipples((previousRipples) => [...previousRipples, newRipple])
 
-      return newRipple.key
-    },
-    [setRipples],
-  )
+			return newRipple.key
+		},
+		[setRipples],
+	)
 
-  const mutationHandler = useCallback(
-    (mutations: MutationRecord[]) => {
-      const element = ref.current?.parentElement
-      const parentElement = element
+	const mutationHandler = useCallback(
+		(mutations: MutationRecord[]) => {
+			const element = ref.current?.parentElement
+			const parentElement = element
 
-      if (!parentElement) return
+			if (!parentElement) return
 
-      mutations.forEach((mutation) => {
-        if (mutation.attributeName !== KEYBOARD_RIPPLE_DATASET_ATTRIBUTE) return
+			mutations.forEach((mutation) => {
+				if (mutation.attributeName !== KEYBOARD_RIPPLE_DATASET_ATTRIBUTE) return
 
-        const parentDatasetState = parentElement.dataset.pressed
+				const parentDatasetState = parentElement.dataset.pressed
 
-        if (parentDatasetState === "true") return
+				if (parentDatasetState === "true") return
 
-        addRippleOnKeyboardPress(element.clientHeight, element.clientWidth)
-      })
-    },
-    [ref, addRippleOnKeyboardPress],
-  )
+				addRippleOnKeyboardPress(element.clientHeight, element.clientWidth)
+			})
+		},
+		[ref, addRippleOnKeyboardPress],
+	)
 
-  const element = useMemo(() => ({ current: ref.current?.parentElement ?? null }), [ref])
+	useEffect(() => {
+		const parentElement = ref.current?.parentElement ?? null
 
-  useMutationObserver({
-    element,
-    options: KEYBOARD_RIPPLE_MUTATION_OBSERVER_OPTIONS,
-    callback: mutationHandler,
-  })
+		if (!parentElement) return
+
+		const observer = new MutationObserver(mutationHandler)
+
+		observer.observe(parentElement, KEYBOARD_RIPPLE_MUTATION_OBSERVER_OPTIONS)
+
+		return () => observer.disconnect()
+	}, [ref, mutationHandler])
 }
 
 export { useKeyboardRipple }

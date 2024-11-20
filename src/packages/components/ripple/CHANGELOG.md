@@ -37,3 +37,9 @@
 ### Patch changes
 
 - Memoized ripple parent element used for keyboard ripple
+
+## 1.0.6
+
+### Patch changes
+
+- Fixed keyboard ripple not firing on enter press
