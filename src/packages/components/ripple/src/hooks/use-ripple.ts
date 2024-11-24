@@ -1,117 +1,66 @@
-"use client"
+import { useComposedRefs } from "@radix-ui/react-compose-refs"
+import { type ComponentPropsWithRef, useRef, useState } from "react"
 
-import { cn } from "@renderui/utils"
-import type { AnimationDefinition } from "framer-motion"
-import { type Key, type RefObject, useRef, useState } from "react"
-import {
-  DEFAULT_RIPPLE_CLASSNAME,
-  RIPPLE_ANIMATION_END_DEFAULT_SCALE,
-  RIPPLE_ANIMATION_END_OPACITY,
-  RIPPLE_ANIMATION_START_SCALE,
-  RIPPLE_DEFAULT_OPACITY,
-  RIPPLE_RIPPLE_BASE_STYLE,
-} from "../constants/constants"
-import type { RippleProps } from "../types/ripple"
-import type { RippleRipple } from "../types/ripple-ripple"
-import { getRippleDuration } from "../utils/get-ripple-duration"
-import { useKeyboardRipple } from "./use-keyboard-ripple"
-import { usePressRipple } from "./use-press-ripple"
-
-type UseRippleReturnType = {
-  ripples: RippleRipple[]
-  internalSubLayerRef: RefObject<HTMLSpanElement>
-  addRippleOnPress: ReturnType<typeof usePressRipple>
-  /* biome-ignore lint/suspicious/noExplicitAny: avoid external module reference error */
-  getRippleRipplesProps: (ripple: RippleRipple) => any
+type RippleRipple = {
+	key: string
+	size: number
+	x: number
+	y: number
 }
 
-function useRipple(props: Omit<RippleProps, "subLayerProps">): UseRippleReturnType {
-  const {
-    ref,
-    opacity: opacityProp,
-    animationDuration: durationProp,
-    scale: scaleProp,
-    transition: transitionProp,
-    initial: initialProp,
-    animate: animateProp,
-    exit: exitProp,
-    style: styleProp,
-    className,
-    isDisabled,
-    onAnimationComplete: onAnimationCompleteProp,
-    ...restProps
-  } = props
+type UseRippleProps = {
+	ref: ComponentPropsWithRef<"span">["ref"]
+	animationDuration?: number
+	isTriggeredOnEnter?: boolean
+	isTriggeredOnSpace?: boolean
+}
 
-  const internalSubLayerRef = useRef<HTMLSpanElement | null>(null)
-  const [ripples, setRipples] = useState<RippleRipple[]>([])
+function useRipple(props: UseRippleProps) {
+	const { ref, animationDuration, isTriggeredOnEnter, isTriggeredOnSpace } = props
 
-  const addRippleOnPress = usePressRipple(setRipples, isDisabled)
+	const [ripples, setRipples] = useState<RippleRipple[]>([])
 
-  useKeyboardRipple(internalSubLayerRef, setRipples)
+	const internalRef = useRef<HTMLSpanElement | null>(null)
 
-  const clearRipple = (key: Key) => {
-    setRipples((previousState) => previousState.filter((ripple) => ripple.key !== key))
-  }
+	const mergedCallbackRef = useComposedRefs(internalRef, ref)
 
-  const onAnimationComplete = (ripple: RippleRipple, definition: AnimationDefinition) => {
-    clearRipple(ripple.key)
+	const cleanupTime = (animationDuration ?? 0) + 100
 
-    if (onAnimationCompleteProp) {
-      onAnimationCompleteProp(definition)
-    }
-  }
+	const calculateRippleData = (target: HTMLSpanElement) => {
+		const rect = target.getBoundingClientRect()
+		const size = Math.max(target.clientWidth, target.clientHeight)
 
-  const getRippleRipplesProps = (ripple: RippleRipple) => {
-    const msDurationProp = durationProp ? Math.round(durationProp / 1000) : undefined
+		return { rect, size }
+	}
 
-    const duration = msDurationProp ?? getRippleDuration(ripple.size)
+	const createRipple = (size: number, x: number, y: number) => {
+		const ripple = { key: crypto.randomUUID(), size, x, y }
 
-    const scale = scaleProp ?? RIPPLE_ANIMATION_END_DEFAULT_SCALE
+		setRipples((prev) => [...prev, ripple])
+		setTimeout(() => setRipples((prev) => prev.filter((r) => r.key !== ripple.key)), cleanupTime)
+	}
 
-    const initial = initialProp ?? {
-      transform: `scale(${RIPPLE_ANIMATION_START_SCALE})`,
-      opacity: opacityProp ?? RIPPLE_DEFAULT_OPACITY,
-    }
+	const handleClick = (event: React.MouseEvent<HTMLSpanElement>) => {
+		const { rect, size } = calculateRippleData(event.currentTarget)
+		createRipple(size, event.clientX - rect.x - size / 2, event.clientY - rect.y - size / 2)
+	}
 
-    const animate = animateProp ?? {
-      transform: `scale(${scale})`,
-      opacity: RIPPLE_ANIMATION_END_OPACITY,
-    }
+	const handleKeyUp = (event: React.KeyboardEvent<HTMLSpanElement>) => {
+		if (
+			(event.key === "Enter" && isTriggeredOnEnter) ||
+			(event.key === " " && isTriggeredOnSpace)
+		) {
+			const { rect, size } = calculateRippleData(event.currentTarget)
+			createRipple(size, rect.width / 2 - size / 2, rect.height / 2 - size / 2)
+		}
+	}
 
-    const exit = exitProp ?? { opacity: RIPPLE_ANIMATION_END_OPACITY }
-
-    const transition = { duration, ...transitionProp }
-
-    const style = {
-      ...RIPPLE_RIPPLE_BASE_STYLE,
-      top: ripple.y,
-      left: ripple.x,
-      width: `${ripple.size}px`,
-      height: `${ripple.size}px`,
-      ...styleProp,
-    }
-
-    return {
-      ref,
-      initial,
-      animate,
-      exit,
-      transition,
-      style,
-      "data-slot": "ripple",
-      className: cn(DEFAULT_RIPPLE_CLASSNAME, className),
-      onAnimationComplete: (definition: AnimationDefinition) =>
-        onAnimationComplete(ripple, definition),
-      ...restProps,
-    }
-  }
-
-  return {
-    ripples,
-    internalSubLayerRef,
-    addRippleOnPress,
-    getRippleRipplesProps,
-  }
+	return {
+		ripples,
+		mergedCallbackRef,
+		handleClick,
+		handleKeyUp,
+	}
 }
 
 export { useRipple }

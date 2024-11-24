@@ -1,17 +1,26 @@
-import type { SubLayerProps } from "@renderui/sub-layer"
-import type { ClassNameProps, Simplify } from "@renderui/utils"
-import type { m } from "framer-motion"
-import type { ComponentPropsWithRef } from "react"
+import type { ClassNameProps, PolymorphicProps, Simplify } from "@renderui/utils"
+import type { ComponentPropsWithRef, ReactNode } from "react"
+import type { RippleItemProps } from "./ripple-item"
 
-type RipplePrimitiveProps = Omit<ComponentPropsWithRef<typeof m.span>, 'className'>
+type RipplePrimitiveProps = Omit<ComponentPropsWithRef<"span">, "className" | "children">
 
-type RippleCustomProps = ClassNameProps & {
-  isDisabled?: boolean
-  opacity?: number
-  animationDuration?: number
-  scale?: number
-  subLayerProps?: SubLayerProps
-}
+type RippleCustomProps = ClassNameProps &
+	PolymorphicProps & {
+		isTriggeredOnEnter?: boolean
+		isTriggeredOnSpace?: boolean
+		animationDuration?: number
+		startingOpacity?: number
+		animationTimingFunction?: string
+		itemProps?: RippleItemProps
+	} & (
+		| {
+				type: "child"
+		  }
+		| {
+				type: "wrapper"
+				children: (props: { ripples: ReactNode }) => ReactNode
+		  }
+	)
 
 type RippleProps = Simplify<RipplePrimitiveProps & RippleCustomProps>
 
