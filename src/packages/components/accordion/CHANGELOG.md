@@ -25,3 +25,9 @@
 ### Patch changes
 
 - Swaped controllable state dependency to use the same one as primitives
+
+## 1.0.4
+
+### Patch changes
+
+- Updated dependencies
