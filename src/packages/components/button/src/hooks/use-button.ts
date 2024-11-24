@@ -29,7 +29,6 @@ function useButton(
     isDisabled,
     isLoading,
     loaderProps,
-    subLayerProps,
     rippleProps,
     type = "button",
     size = "medium",
@@ -100,7 +99,6 @@ function useButton(
       ...ariaComponentProps,
       ...restProps,
     },
-    subLayerProps,
     rippleProps: getRippleProps({ rippleProps, isLoading }),
     utility: {
       isLoading,

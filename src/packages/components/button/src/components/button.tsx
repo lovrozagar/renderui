@@ -2,6 +2,7 @@
 
 import { Ripple } from "@renderui/ripple"
 import { polymorphic, renderProp } from "@renderui/utils"
+import type { ReactNode } from "react"
 import { useButton } from "../hooks/use-button"
 import type { ButtonProps } from "../types/button"
 
@@ -17,7 +18,7 @@ const Button = (props: ButtonProps) => {
     ...restButtonProps
   } = props
 
-  const { buttonProps, subLayerProps, rippleProps, utility } = useButton(restButtonProps)
+  const { buttonProps, rippleProps, utility } = useButton(restButtonProps)
 
   const { isLoading, loaderPosition, renderProps } = utility
 
@@ -29,7 +30,7 @@ const Button = (props: ButtonProps) => {
     return typeof content === "function" ? content(renderProps) : content
   }
 
-  const getContent = () => {
+  const getContent = (ripples?: ReactNode) => {
     if (asChild) return getChildren()
 
     return (
@@ -44,14 +45,20 @@ const Button = (props: ButtonProps) => {
 
         {renderProp(endContent, renderProps)}
 
-        {hasRipple ? (
-          <Ripple data-slot="ripple" subLayerProps={subLayerProps} {...rippleProps} />
-        ) : null}
+        {ripples}
       </>
     )
   }
 
-  return <Component {...buttonProps}>{getContent()}</Component>
+  if (!hasRipple) {
+    return <Component {...buttonProps}>{getContent()}</Component>
+  }
+
+  return (
+    <Ripple type="wrapper" asChild {...rippleProps}>
+      {({ ripples }) => <Component {...buttonProps}>{getContent(ripples)}</Component>}
+    </Ripple>
+  )
 }
 
 export { Button }
