@@ -1,5 +1,3 @@
-"use client"
-
 import { cn, polymorphic } from "@renderui/utils"
 import type { CSSProperties } from "react"
 import { DEFAULT_ASPECT_RATIO_CLASSNAME } from "../constants/constants"
