@@ -45,3 +45,9 @@
 
 - Use radix-ui useComposedRefs to match primitive deps
 - Use renderui deps instead of peer deps
+
+## 1.0.7
+
+### Patch changes
+
+- Use reworked ripple as a primitive if ripple is used, else use polymorphic button
