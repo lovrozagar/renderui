@@ -43,3 +43,11 @@
 ### Patch changes
 
 - Fixed keyboard ripple not firing on enter press
+
+## 1.0.7
+
+### Patch changes
+
+- Refactored Ripple, droped framer-motion as a peer dependency, animation now css only
+- Support for type wrapper & item
+- Remove observers, activate only by handlers
