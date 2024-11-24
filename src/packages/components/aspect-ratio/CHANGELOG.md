@@ -5,3 +5,9 @@
 ### Patch changes
 
 - Add aspect ratio component
+
+## 1.0.1
+
+### Patch changes
+
+- Updated dependencies
