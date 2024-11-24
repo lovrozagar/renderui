@@ -1,6 +1,6 @@
 "use client"
 
-import { useMergedRef } from "@renderui/hooks"
+import { useComposedRefs } from "@radix-ui/react-compose-refs"
 import { useAriaHandlers } from "@renderui/hooks-internal"
 import { cn, polymorphic } from "@renderui/utils"
 import { splitAriaProps } from "@renderui/utils-internal"
@@ -11,9 +11,6 @@ import type { AriaProps } from "../types/aria"
 const Aria = (props: AriaProps) => {
   const { ariaProps, nonAriaProps } = splitAriaProps(props)
 
-  const internalRef = useRef<HTMLElement>(null)
-  const mergedRefCallback = useMergedRef<HTMLElement>([internalRef, nonAriaProps.ref])
-
   const {
     isPressDisabled,
     isFocusDisabled,
@@ -23,12 +20,16 @@ const Aria = (props: AriaProps) => {
   } = ariaProps
 
   const {
+    ref,
     className,
     isDisabled,
     asChild,
     isUsingAriaPressProps = false,
     ...restNonAriaProps
   } = nonAriaProps
+
+  const internalRef = useRef<HTMLElement>(null)
+  const mergedRefCallback = useComposedRefs(internalRef, ref)
 
   const { ariaComponentProps } = useAriaHandlers(
     {
@@ -46,7 +47,7 @@ const Aria = (props: AriaProps) => {
 
   return (
     <Component
-      data-slot='aria'
+      data-slot="aria"
       data-disabled={isDisabled}
       ref={mergedRefCallback as (instance: HTMLDivElement | null) => void}
       className={cn(DEFAULT_ARIA_CLASSNAME, className)}
