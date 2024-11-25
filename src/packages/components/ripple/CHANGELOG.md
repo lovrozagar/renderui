@@ -51,3 +51,12 @@
 - Refactored Ripple, droped framer-motion as a peer dependency, animation now css only
 - Support for type wrapper & item
 - Remove observers, activate only by handlers
+
+## 1.0.8
+
+### Patch changes
+
+- Fixed infinite ripple creation on Enter/Spacebar hold
+- Fixed issue where non matching (onKeyDown and onKeyUp) events were merged
+- Added isDisabled prop
+- startingOpacity prop renamed to itemOpacity
