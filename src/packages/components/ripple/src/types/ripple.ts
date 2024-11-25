@@ -5,22 +5,23 @@ import type { RippleItemProps } from "./ripple-item"
 type RipplePrimitiveProps = Omit<ComponentPropsWithRef<"span">, "className" | "children">
 
 type RippleCustomProps = ClassNameProps &
-	PolymorphicProps & {
-		isTriggeredOnEnter?: boolean
-		isTriggeredOnSpace?: boolean
-		animationDuration?: number
-		startingOpacity?: number
-		animationTimingFunction?: string
-		itemProps?: RippleItemProps
-	} & (
-		| {
-				type: "child"
-		  }
-		| {
-				type: "wrapper"
-				children: (props: { ripples: ReactNode }) => ReactNode
-		  }
-	)
+  PolymorphicProps & {
+    isDisabled?: boolean
+    isTriggeredOnEnter?: boolean
+    isTriggeredOnSpace?: boolean
+    animationDuration?: number
+    itemOpacity?: number
+    animationTimingFunction?: string
+    itemProps?: RippleItemProps
+  } & (
+    | {
+        type: "child"
+      }
+    | {
+        type: "wrapper"
+        children: (props: { ripples: ReactNode }) => ReactNode
+      }
+  )
 
 type RippleProps = Simplify<RipplePrimitiveProps & RippleCustomProps>
 
