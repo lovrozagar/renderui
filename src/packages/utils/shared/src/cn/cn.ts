@@ -1,12 +1,11 @@
 import type { ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 import { cx } from "../cx/cx"
-import type { CnOptions } from "./cn"
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(cx(inputs))
 }
 
-type ClassNameProps = { className?: CnOptions }
+type ClassNameProps = { className?: ClassValue }
 
-export { cn, type ClassValue as CnOptions, type ClassNameProps }
+export { cn, type ClassValue, type ClassNameProps }
