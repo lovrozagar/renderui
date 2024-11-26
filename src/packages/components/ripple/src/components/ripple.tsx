@@ -1,3 +1,5 @@
+'use client'
+
 import { chain, cn, optional, polymorphic } from "@renderui/utils"
 import type { CSSProperties } from "react"
 import {
@@ -16,6 +18,7 @@ const Ripple = (props: RippleProps) => {
     tabIndex,
     style,
     className,
+    classNames,
     /* @ts-ignore children exists if type is wrapper */
     children,
     itemProps,
@@ -31,7 +34,8 @@ const Ripple = (props: RippleProps) => {
     ...restProps
   } = props
 
-  const { style: itemStyle, ...restItemProps } = optional(itemProps)
+  const {className: itemClassName,  style: itemStyle, ...restItemProps } = optional(itemProps)
+
 
   const { ripples, mergedCallbackRef, handleClick, handleKeyUp } = useRipple({
     ref,
@@ -46,6 +50,7 @@ const Ripple = (props: RippleProps) => {
   const rippleItems = ripples.map((ripple) => (
     <RippleItem
       key={ripple.key}
+      className={[itemClassName, classNames?.item]}
       style={
         {
           width: ripple.size,
@@ -61,7 +66,7 @@ const Ripple = (props: RippleProps) => {
 
   return (
     <Component
-      data-slot="ripple"
+      data-slot="ripple-root"
       data-disabled={isDisabled}
       ref={mergedCallbackRef}
       tabIndex={tabIndex ?? (type === "wrapper" ? 0 : -1)}
@@ -69,9 +74,10 @@ const Ripple = (props: RippleProps) => {
         DEFAULT_RIPPLE_CLASSNAME,
         type === "wrapper" ? RIPPLE_WRAPPER_CLASSNAME : RIPPLE_CHILD_CLASSNAME,
         className,
+        classNames?.root,
       )}
-      onKeyUp={chain(onKeyUp, handleKeyUp)}
       onClick={chain(onClick, handleClick)}
+      onKeyUp={chain(onKeyUp, handleKeyUp)}
       style={
         {
           "--animation-duration": `${animationDuration}ms`,

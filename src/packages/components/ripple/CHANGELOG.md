@@ -60,3 +60,15 @@
 - Fixed issue where non matching (onKeyDown and onKeyUp) events were merged
 - Added isDisabled prop
 - startingOpacity prop renamed to itemOpacity
+
+## 1.0.9
+
+### Patch changes
+
+- Fixed default export to be the last one
+
+## 1.1.0
+
+### Patch changes
+
+- Add classNames prop

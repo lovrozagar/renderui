@@ -41,7 +41,7 @@ function useRipple(props: UseRippleProps) {
     setTimeout(() => setRipples((prev) => prev.filter((r) => r.key !== ripple.key)), cleanupTime)
   }
 
-  const handleClick = (event: React.MouseEvent<HTMLSpanElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     if (
       /* return early if keyboard pointer type...
       ...keyboard action is handled by handleKeyUp handler, prevents creating ripples on key hold */
@@ -57,7 +57,7 @@ function useRipple(props: UseRippleProps) {
     createRipple(size, event.clientX - rect.x - size / 2, event.clientY - rect.y - size / 2)
   }
 
-  const handleKeyUp = (event: React.KeyboardEvent<HTMLSpanElement>) => {
+  const handleKeyUp = (event: React.KeyboardEvent<HTMLElement>) => {
     if (isDisabled) return
 
     if (

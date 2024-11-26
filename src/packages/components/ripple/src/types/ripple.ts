@@ -1,4 +1,4 @@
-import type { ClassNameProps, PolymorphicProps, Simplify } from "@renderui/utils"
+import type { ClassNameProps, ClassValue, PolymorphicProps, Simplify } from "@renderui/utils"
 import type { ComponentPropsWithRef, ReactNode } from "react"
 import type { RippleItemProps } from "./ripple-item"
 
@@ -13,6 +13,10 @@ type RippleCustomProps = ClassNameProps &
     itemOpacity?: number
     animationTimingFunction?: string
     itemProps?: RippleItemProps
+    classNames?: {
+      root?: ClassValue
+      item?: ClassValue
+    }
   } & (
     | {
         type: "child"
