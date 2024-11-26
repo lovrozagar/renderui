@@ -12,7 +12,7 @@
 
 - Fix package.json default export order
 
-## 1.0.3
+## 1.0.4
 
 ### Patch changes
 
