@@ -30,3 +30,9 @@
 ### Patch changes
 
 - Fixed workspace dependencies not being recognized
+
+## 1.0.6
+
+### Patch changes
+
+- Updated dependencies & peer dependencies

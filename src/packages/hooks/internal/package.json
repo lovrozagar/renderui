@@ -7,24 +7,27 @@
     "url": "https://github.com/renderui/issues"
   },
   "dependencies": {
-    "@renderui/hooks": "*",
-    "@renderui/utils": "*"
+    "@renderui/utils": "latest"
   },
   "exports": {
     ".": {
       "import": {
-        "default": "./dist/index.js",
-        "types": "./dist/index.d.ts"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       }
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "homepage": "https://renderui.org",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "name": "@renderui/hooks-internal",
   "peerDependencies": {
+    "react-aria": ">=3.0.0",
     "@types/react": "*",
     "@types/react-dom": "*",
     "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
@@ -47,10 +50,11 @@
     "url": "git+https://github.com/lovrozagar/renderui.git"
   },
   "scripts": {
+    "prebuild": "node ../../../scripts/fix-exports.mjs",
     "build": "bunchee -m"
   },
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.4"
+  "version": "1.0.6"
 }
