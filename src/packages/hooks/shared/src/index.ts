@@ -1,3 +1,6 @@
+export { useDebounce, type UseDebounceReturn } from "./use-debounce/use-debounce"
+export { useFirstEffect, type UseFirstEffectReturn} from "./use-first-effect/use-first-effect"
+
 export { useEventListener } from "./use-event-listener/use-event-listener"
 export { useFreshRef, type UseFreshRefReturn } from "./use-fresh-ref/use-fresh-ref"
 export {
