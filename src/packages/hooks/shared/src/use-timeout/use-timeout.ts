@@ -1,3 +1,5 @@
+"use client"
+
 import { useCallback, useEffect, useRef } from "react"
 
 type UseTimeoutProps = {
@@ -19,7 +21,7 @@ function useTimeout(props: UseTimeoutProps) {
 		if (!isActive.current) {
 			isActive.current = true
 			ref.current = setTimeout(() => {
-				callback()
+				callback()	
 			}, delay)
 		}
 	}

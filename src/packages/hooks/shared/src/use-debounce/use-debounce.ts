@@ -1,3 +1,5 @@
+"use client"
+
 import { useMemo } from "react"
 import { useFreshRef } from "../use-fresh-ref/use-fresh-ref"
 

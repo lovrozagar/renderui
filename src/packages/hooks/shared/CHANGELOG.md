@@ -47,3 +47,9 @@
 ### Patch changes
 
 - Addded useDebounce, useFirstEffect, useInterval, useTimeout, useMediaQuery hooks
+
+## 1.0.9
+
+### Patch changes
+
+- Added missing use client directive

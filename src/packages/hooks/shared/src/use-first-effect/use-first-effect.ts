@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useRef, type DependencyList } from "react";
 import { useFreshRef } from "../use-fresh-ref/use-fresh-ref";
 
