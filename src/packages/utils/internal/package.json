@@ -14,7 +14,10 @@
       }
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "homepage": "https://renderui.org",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -43,7 +46,8 @@
     "url": "git+https://github.com/lovrozagar/renderui.git"
   },
   "scripts": {
-    "build": "bunchee -m"
+    "build": "bunchee -m",
+    "prebuild": "node ../../../scripts/fix-exports.mjs"
   },
   "sideEffects": false,
   "type": "module",

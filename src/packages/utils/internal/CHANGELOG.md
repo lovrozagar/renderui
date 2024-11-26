@@ -11,3 +11,9 @@
 ### Patch changes
 
 - Fix package.json default export order
+
+## 1.0.3
+
+### Patch changes
+
+- Update peer deps
