@@ -51,3 +51,17 @@
 ### Patch changes
 
 - Use reworked ripple as a primitive if ripple is used, else use polymorphic button
+
+## 1.0.8
+
+### Patch changes
+
+- Updated ripple dependency
+- Fixed ripple props
+- Fix default export to be the last one, bundle fix
+
+## 1.0.9
+
+### Patch changes
+
+- Add classNames prop

@@ -55,7 +55,7 @@ const Button = (props: ButtonProps) => {
   }
 
   return (
-    <Ripple type="wrapper" asChild {...rippleProps}>
+    <Ripple {...rippleProps}>
       {({ ripples }) => <Component {...buttonProps}>{getContent(ripples)}</Component>}
     </Ripple>
   )

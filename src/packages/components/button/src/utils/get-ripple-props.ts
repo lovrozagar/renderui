@@ -1,28 +1,38 @@
 import type { RippleProps } from "@renderui/ripple"
-import { cx, getOptionalObject } from "@renderui/utils"
+import { type ClassValue, optional } from "@renderui/utils"
 
 type GetRipplePropsArgs = {
   rippleProps: RippleProps | undefined
   isLoading: boolean | undefined
+  classNamesRippleItem: ClassValue | undefined
 }
 
-/* biome-ignore lint/suspicious/noExplicitAny: avoid external module reference error: */
-const getRippleProps = (props: GetRipplePropsArgs): any => {
-  const { rippleProps, isLoading } = props
+const getRippleProps = (props: GetRipplePropsArgs) => {
+  const { rippleProps, isLoading, classNamesRippleItem } = props
 
   const {
-    isDisabled: isDisabledProp,
-    className,
     style,
+    className,
+    isDisabled: isDisabledProp,
+    itemProps,
+    asChild = true,
+    type = "wrapper",
     ...restRippleProps
-  } = getOptionalObject(rippleProps)
+  } = optional(rippleProps)
+
+  const { className: itemClassName, ...restItemProps } = optional(itemProps)
 
   const isDisabled = isLoading ?? isDisabledProp
 
   return {
-    "data-slot": "loader",
+    type,
+    asChild,
     "data-disabled": isDisabled,
-    "className": isLoading ? cx("text-[rgba(var(--button-color))]", className) : undefined,
+    "className": isLoading ? ["text-[rgba(var(--button-color))]", className] : undefined,
+    itemsProps: {
+      className: [itemClassName, classNamesRippleItem],
+      ...restItemProps,
+    },
     ...restRippleProps,
   }
 }

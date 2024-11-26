@@ -25,6 +25,7 @@ function useButton(
   const {
     ref,
     className,
+    classNames,
     style,
     isDisabled,
     isLoading,
@@ -84,6 +85,7 @@ function useButton(
           hasContentOnLoading,
         }),
         className,
+        classNames?.root,
       ),
       style: {
         ...getStyleVariables({ color, variant }),
@@ -99,7 +101,11 @@ function useButton(
       ...ariaComponentProps,
       ...restProps,
     },
-    rippleProps: getRippleProps({ rippleProps, isLoading }),
+    rippleProps: getRippleProps({
+      rippleProps,
+      isLoading,
+      classNamesRippleItem: classNames?.rippleItem,
+    }),
     utility: {
       isLoading,
       loaderPosition,
