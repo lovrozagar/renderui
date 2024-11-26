@@ -61,6 +61,11 @@
 
 ### Patch changes
 
-- Remove initializeContext utility
-- Remove composeEventHandlers
+- Removed initializeContext utility
+- Removed composeEventHandlers
 - Instead use @radix-ui/react-context & @radix-ui/react-compose-event-handlers
+
+# 1.0.0
+
+- Exported ClassValue type
+- Renamed getOptionalObject to optional
