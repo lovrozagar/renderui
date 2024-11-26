@@ -41,3 +41,9 @@
 ### Patch changes
 
 - Fixed exports
+
+## 1.0.8
+
+### Patch changes
+
+- Addded useDebounce, useFirstEffect, useInterval, useTimeout, useMediaQuery hooks

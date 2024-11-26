@@ -43,10 +43,11 @@
     "url": "git+https://github.com/lovrozagar/renderui.git"
   },
   "scripts": {
+    "prebuild": "node ../../../scripts/fix-exports.mjs",
     "build": "bunchee -m"
   },
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.7"
+  "version": "1.0.8"
 }
