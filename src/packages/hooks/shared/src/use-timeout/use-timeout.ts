@@ -41,4 +41,4 @@ function useTimeout(props: UseTimeoutProps) {
 	return { ref, isActive: isActive.current, call, clear }
 }
 
-export { useTimeout }
+export { useTimeout, type UseTimeoutProps }

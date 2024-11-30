@@ -41,4 +41,4 @@ function useInterval(props: UseIntervalProps) {
 	return { ref, isActive: isActive.current, call, clear }
 }
 
-export { useInterval }
+export { useInterval, type UseIntervalProps }
