@@ -65,3 +65,10 @@
 ### Patch changes
 
 - Add classNames prop
+
+## 1.1.0
+
+### Patch changes
+
+- Refactored press functionality, dropped react-aria as dependency\
+- Refactored variant props and styles
