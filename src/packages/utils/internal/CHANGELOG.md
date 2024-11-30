@@ -10,10 +10,16 @@
 
 ### Patch changes
 
-- Fix package.json default export order
+- Fixed package.json default export order
 
 ## 1.0.4
 
 ### Patch changes
 
-- Update peer deps
+- Updated peer deps
+
+## 1.0.5
+
+### Patch changes
+
+- Removed splitAriaProps utility
