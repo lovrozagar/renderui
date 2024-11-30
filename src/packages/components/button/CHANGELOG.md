@@ -70,5 +70,11 @@
 
 ### Patch changes
 
-- Refactored press functionality, dropped react-aria as dependency\
+- Refactored press functionality, dropped react-aria as dependency
 - Refactored variant props and styles
+
+## 1.1.1
+
+### Patch changes
+
+- Updated peer dependencies
