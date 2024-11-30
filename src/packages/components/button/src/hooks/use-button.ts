@@ -1,123 +1,111 @@
-import { useComposedRefs } from "@radix-ui/react-compose-refs"
-import { useAriaHandlers } from "@renderui/hooks-internal"
 import { chain, cn } from "@renderui/utils"
-import { splitAriaProps } from "@renderui/utils-internal"
-import { type CSSProperties, useRef } from "react"
+import type { CSSProperties } from "react"
 import { buttonClasses } from "../classes/button-classes"
 import type { ButtonProps } from "../types/button"
-import { getLoaderProps } from "../utils/get-loader-props"
 import { getRippleProps } from "../utils/get-ripple-props"
-import { getStyleVariables } from "../utils/get-style-variables"
+import { usePress } from "./use-press"
 
 function useButton(
-  props: Omit<
-    ButtonProps,
-    | "asChild"
-    | "children"
-    | "startContent"
-    | "endContent"
-    | "loader"
-    | "loadingContent"
-    | "hasRipple"
-  >,
+	props: Omit<
+		ButtonProps,
+		"asChild" | "children" | "startContent" | "endContent" | "loader" | "loadingContent"
+	>,
 ) {
-  const { ariaProps, nonAriaProps } = splitAriaProps(props)
-  const {
-    ref,
-    className,
-    classNames,
-    style,
-    isDisabled,
-    isLoading,
-    loaderProps,
-    rippleProps,
-    type = "button",
-    size = "medium",
-    variant = "solid",
-    color = "primary",
-    loaderPosition = "end",
-    hasDefaultInnerRing = true,
-    hasDefaultHoverStyles = true,
-    hasDefaultFocusVisibleStyles = true,
-    hasDefaultPressedStyles = true,
-    hasRingOnAnyFocus = false,
-    hasLowerOpacityOnLoading = true,
-    hasContentOnLoading = true,
-    hasDisabledStyles = true,
-    hasShadowOnHover = false,
-    onClick,
-    ...restProps
-  } = nonAriaProps
+	const {
+		style,
+		className,
+		classNames,
+		isLoading,
+		isDisabled,
+		rippleProps,
+		onClick,
+		onPress,
+		onKeyDown,
+		onKeyUp,
+		onPointerDown,
+		onPointerUp,
+		onPointerLeave,
+		type = "button",
+		size = "medium",
+		variant = "solid",
+		color = "primary",
+		ring = "default",
+		loaderPosition = "end",
+		hasRipple = true,
+		hasDefaultHoverStyles = true,
+		hasDefaultFocusVisibleStyles = true,
+		hasDefaultPressedStyles = true,
+		hasRingOnAnyFocus = false,
+		hasDefaultLoadingStyles = true,
+		hasDisabledStyles = true,
+		hasShadowOnHover = false,
+		...restProps
+	} = props
 
-  const internalRef = useRef<HTMLButtonElement>(null)
-  const mergedRefs = useComposedRefs<HTMLButtonElement>(internalRef, ref)
+	/* press state to fix active: selector, text selection and other issues */
+	/* akin to react-aria usePress but much lighter, keeps same events */
+	/* onClick allowed and same as native, passing onPress stops propagation by default */
+	const press = usePress({ isDisabled, isLoading, onPress })
 
-  const isPressDisabled = isDisabled || ariaProps?.isPressDisabled || isLoading
-  const isHoverDisabled = isDisabled || ariaProps?.isHoverDisabled || isLoading
+	return {
+		buttonProps: {
+			type,
+			disabled: press.isInactive,
+			className: cn(
+				buttonClasses({
+					variant,
+					size,
+					ring,
+					hasRingOnAnyFocus,
+					hasDefaultFocusVisibleStyles,
+					hasDefaultPressedStyles,
+					hasDefaultHoverStyles,
+					hasDefaultLoadingStyles,
+					hasDisabledStyles,
+					hasShadowOnHover,
+					isInactive: press.isInactive,
+				}),
+				className,
+				classNames?.button,
+			),
+			style: {
+				/* prevent text selection on double tap or hold */
+				userSelect: press.isPressed ? "none" : undefined,
 
-  const { ariaComponentProps, ariaFlags } = useAriaHandlers(
-    {
-      ...ariaProps,
-      onPress: chain(ariaProps.onPress, onClick),
-      isPressDisabled,
-      isHoverDisabled,
-    },
-    internalRef,
-  )
+				/* set button color variables */
+				"--button-bg": `var(--${color})`,
+				"--button-color": variant === "light" ? `var(--${color})` : `var(--${color}-foreground)`,
 
-  return {
-    buttonProps: {
-      type,
-      ref: mergedRefs,
-      disabled: isDisabled,
-      className: cn(
-        buttonClasses({
-          size,
-          variant,
-          hasRingOnAnyFocus,
-          hasDefaultInnerRing,
-          hasDefaultFocusVisibleStyles,
-          hasDefaultPressedStyles,
-          hasDefaultHoverStyles,
-          hasLowerOpacityOnLoading,
-          hasDisabledStyles,
-          hasShadowOnHover,
-          hasContentOnLoading,
-        }),
-        className,
-        classNames?.root,
-      ),
-      style: {
-        ...getStyleVariables({ color, variant }),
-        ...style,
-      } as CSSProperties,
-      "aria-label": isLoading ? "loading" : undefined,
-      "aria-busy": isLoading || undefined,
-      "data-slot": "button",
-      "data-variant": variant,
-      "data-color": color,
-      "data-loading": isLoading || undefined,
-      "data-disabled": isDisabled,
-      ...ariaComponentProps,
-      ...restProps,
-    },
-    rippleProps: getRippleProps({
-      rippleProps,
-      isLoading,
-      classNamesRippleItem: classNames?.rippleItem,
-    }),
-    utility: {
-      isLoading,
-      loaderPosition,
-      renderProps: {
-        isPressed: ariaFlags.isPressed,
-        isKeyboardPressed: ariaFlags.isKeyboardPressed,
-        isFocused: ariaFlags.isFocused,
-        isFocusVisible: ariaFlags.isFocusVisible,
-        loaderProps: getLoaderProps({ isLoading }),
-      },
-    },
-  }
+				/* merge with style prop */
+				...style,
+			} as CSSProperties,
+			/* if button is disabled or loading, disable press events (capture can still be used) */
+			onClick: press.isInactive ? undefined : chain(onClick, press.handlePress),
+			onKeyDown: press.isInactive ? undefined : chain(onKeyDown, press.handleKeyDown),
+			onKeyUp: press.isInactive ? undefined : chain(onKeyUp, press.handleKeyUp),
+			onPointerDown: press.isInactive ? undefined : chain(onPointerDown, press.handlePointerDown),
+			onPointerUp: press.isInactive ? undefined : chain(onPointerUp, press.handlePointerUp),
+			onPointerLeave: chain(onPointerLeave, press.handlePointerLeave),
+			"data-slot": "button",
+			"data-pressed": press.isPressed,
+			"data-variant": variant,
+			"data-color": color,
+			"data-loading": isLoading,
+			"data-disabled": isDisabled,
+			"aria-label": isLoading ? "loading" : undefined,
+			"aria-busy": isLoading,
+			...restProps,
+		},
+		rippleProps: getRippleProps({ rippleProps, rippleItemClassName: classNames?.["ripple-item"] }),
+		ui: {
+			hasRipple,
+			isLoading,
+			loaderPosition,
+			renderProps: {
+				isPressed: press.isPressed,
+			},
+		},
+	}
 }
 
 export { useButton }

@@ -7,58 +7,57 @@ import { useButton } from "../hooks/use-button"
 import type { ButtonProps } from "../types/button"
 
 const Button = (props: ButtonProps) => {
-  const {
-    asChild,
-    children,
-    startContent,
-    endContent,
-    loader,
-    loadingContent,
-    hasRipple = true,
-    ...restButtonProps
-  } = props
+	const {
+		asChild,
+		children,
+		startContent,
+		endContent,
+		loader,
+		loadingContent,
+		...restButtonProps
+	} = props
 
-  const { buttonProps, rippleProps, utility } = useButton(restButtonProps)
+	const { buttonProps, rippleProps, ui } = useButton(restButtonProps)
 
-  const { isLoading, loaderPosition, renderProps } = utility
+	const { hasRipple, isLoading, loaderPosition, renderProps } = ui
 
-  const Component = polymorphic(asChild, "button")
+	const Component = polymorphic(asChild, "button")
 
-  const getChildren = () => {
-    const content = props[isLoading && loadingContent ? "loadingContent" : "children"]
+	const getChildren = () => {
+		const content = props[isLoading && loadingContent ? "loadingContent" : "children"]
 
-    return typeof content === "function" ? content(renderProps) : content
-  }
+		return renderProp(content, renderProps)
+	}
 
-  const getContent = (ripples?: ReactNode) => {
-    if (asChild) return getChildren()
+	const getContent = (ripples?: ReactNode) => {
+		if (asChild) return getChildren()
 
-    return (
-      <>
-        {renderProp(startContent, renderProps)}
+		return (
+			<>
+				{renderProp(startContent, renderProps)}
 
-        {isLoading && loaderPosition === "start" ? renderProp(loader, renderProps) : null}
+				{isLoading && loaderPosition === "start" ? renderProp(loader, renderProps) : null}
 
-        {renderProp(children, renderProps)}
+				{getChildren()}
 
-        {isLoading && loaderPosition === "end" ? renderProp(loader, renderProps) : null}
+				{isLoading && loaderPosition === "end" ? renderProp(loader, renderProps) : null}
 
-        {renderProp(endContent, renderProps)}
+				{renderProp(endContent, renderProps)}
 
-        {ripples}
-      </>
-    )
-  }
+				{ripples}
+			</>
+		)
+	}
 
-  if (!hasRipple) {
-    return <Component {...buttonProps}>{getContent()}</Component>
-  }
+	if (!hasRipple) {
+		return <Component {...buttonProps}>{getContent()}</Component>
+	}
 
-  return (
-    <Ripple {...rippleProps}>
-      {({ ripples }) => <Component {...buttonProps}>{getContent(ripples)}</Component>}
-    </Ripple>
-  )
+	return (
+		<Ripple {...rippleProps}>
+			{({ ripples }) => <Component {...buttonProps}>{getContent(ripples)}</Component>}
+		</Ripple>
+	)
 }
 
 export { Button }

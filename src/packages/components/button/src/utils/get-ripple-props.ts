@@ -2,39 +2,24 @@ import type { RippleProps } from "@renderui/ripple"
 import { type ClassValue, optional } from "@renderui/utils"
 
 type GetRipplePropsArgs = {
-  rippleProps: RippleProps | undefined
-  isLoading: boolean | undefined
-  classNamesRippleItem: ClassValue | undefined
+	rippleProps: RippleProps | undefined
+	rippleItemClassName: ClassValue | undefined
 }
 
 const getRippleProps = (props: GetRipplePropsArgs) => {
-  const { rippleProps, isLoading, classNamesRippleItem } = props
+	const { rippleProps, rippleItemClassName } = props
 
-  const {
-    style,
-    className,
-    isDisabled: isDisabledProp,
-    itemProps,
-    asChild = true,
-    type = "wrapper",
-    ...restRippleProps
-  } = optional(rippleProps)
+	const { classNames, asChild = true, type = "wrapper", ...restRippleProps } = optional(rippleProps)
 
-  const { className: itemClassName, ...restItemProps } = optional(itemProps)
-
-  const isDisabled = isLoading ?? isDisabledProp
-
-  return {
-    type,
-    asChild,
-    "data-disabled": isDisabled,
-    "className": isLoading ? ["text-[rgba(var(--button-color))]", className] : undefined,
-    itemsProps: {
-      className: [itemClassName, classNamesRippleItem],
-      ...restItemProps,
-    },
-    ...restRippleProps,
-  }
+	return {
+		type,
+		asChild,
+		classNames: {
+			...classNames,
+			rippleItem: [rippleItemClassName, classNames?.rippleItem],
+		},
+		...restRippleProps,
+	} satisfies Partial<RippleProps>
 }
 
 export { getRippleProps }
