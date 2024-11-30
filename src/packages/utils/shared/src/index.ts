@@ -3,7 +3,6 @@ export { cn, type ClassNameProps, type ClassValue } from "./cn/cn"
 export type { Color } from "./color/color"
 export { cva, type VariantProps } from "./cva/cva"
 export { cx, type CxOptions, type CxReturn } from "./cx/cx"
-export { mergeProps } from "./merge-props/merge-props"
 export { noop } from "./noop/noop"
 export {
   EMPTY_OBJECT,
