@@ -1,3 +1,4 @@
+export { PopoverClosePrimitive } from "./components/popover-close-primitive"
 export { PopoverContent } from "./components/popover-content"
 export { PopoverRoot } from "./components/popover-root"
 export { PopoverTrigger } from "./components/popover-trigger"
