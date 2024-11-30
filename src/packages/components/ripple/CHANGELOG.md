@@ -72,3 +72,10 @@
 ### Patch changes
 
 - Add classNames prop
+
+## 1.1.1
+
+### Patch changes
+
+- Renamed ripple slot props
+- Changed utils to a peer dependency

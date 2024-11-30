@@ -7,8 +7,7 @@
     "url": "https://github.com/renderui/issues"
   },
   "dependencies": {
-    "@radix-ui/react-compose-refs": "latest",
-    "@renderui/utils": "latest"
+    "@radix-ui/react-compose-refs": "latest"
   },
   "exports": {
     ".": {
@@ -28,6 +27,7 @@
   "module": "./dist/index.js",
   "name": "@renderui/ripple",
   "peerDependencies": {
+    "@renderui/utils": ">=1.0.1",
     "@types/react": "*",
     "@types/react-dom": "*",
     "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
@@ -50,11 +50,11 @@
     "url": "git+https://github.com/lovrozagar/renderui.git"
   },
   "scripts": {
-    "prebuild": "node ../../../scripts/fix-exports.mjs",
-    "build": "bunchee -m"
+    "build": "bunchee -m",
+    "prebuild": "node ../../../scripts/fix-exports.mjs"
   },
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.1.0"
+  "version": "1.1.1"
 }
