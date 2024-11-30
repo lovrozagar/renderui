@@ -3,21 +3,12 @@
     "email": "lovro.zagar5@gmail.com",
     "name": "Lovro Žagar"
   },
-  "dependencies": {
-    "@radix-ui/react-popover": ">=1.1.2",
-    "@renderui/hooks-internal": ">=1.0.3",
-    "@renderui/utils-internal": ">=1.0.2"
+  "bugs": {
+    "url": "https://github.com/renderui/issues"
   },
-  "devDependencies": {
-    "@renderui/utils": ">=0.3.2",
-    "@renderui/button": ">=1.0.5",
-    "@renderui/hooks": ">=1.0.4",
-    "bunchee": "^5.5.1",
-    "react": "19.0.0-rc-a960b92c-20240819",
-    "react-dom": "19.0.0-rc-a960b92c-20240819",
-    "types-react": "^19.0.0-rc.1",
-    "types-react-dom": "^19.0.0-rc.1",
-    "typescript": "^5.5.4"
+  "dependencies": {
+    "@radix-ui/react-popover": "latest",
+    "@renderui/utils-internal": "1.0.5"
   },
   "exports": {
     ".": {
@@ -27,17 +18,31 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "homepage": "https://renderui.org",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "name": "@renderui/popover",
   "peerDependencies": {
-    "@renderui/utils": ">=0.3.2",
-    "@renderui/button": ">=1.0.5",
-    "@renderui/hooks": ">=1.0.4",
-    "react": ">=18",
-    "react-dom": ">=18"
+    "@renderui/button": ">=1.1.1",
+    "@renderui/utils": ">=1.0.1",
+    "@renderui/hooks": ">=1.1.0",
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+    "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
   },
   "private": false,
   "publishConfig": {
@@ -45,13 +50,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lovrozagar/renderui"
+    "url": "git+https://github.com/lovrozagar/renderui.git"
   },
   "scripts": {
-    "build": "bunchee -m"
+    "build": "bunchee -m",
+    "prebuild": "node ../../../scripts/fix-exports.mjs"
   },
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
