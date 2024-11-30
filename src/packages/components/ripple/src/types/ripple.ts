@@ -14,8 +14,8 @@ type RippleCustomProps = ClassNameProps &
     animationTimingFunction?: string
     itemProps?: RippleItemProps
     classNames?: {
-      root?: ClassValue
-      item?: ClassValue
+      ripple?: ClassValue
+      rippleItem?: ClassValue
     }
   } & (
     | {
