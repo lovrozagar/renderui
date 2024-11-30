@@ -69,3 +69,8 @@
 
 - Exported ClassValue type
 - Renamed getOptionalObject to optional
+
+# 1.0.1
+
+- Removed mergeProps utility
+- Refactored VariantProps type to not allow null values
