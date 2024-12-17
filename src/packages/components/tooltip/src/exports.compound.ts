@@ -1,0 +1,8 @@
+export { TooltipContent as Content } from "./components/tooltip-content"
+export { TooltipRoot as Root } from "./components/tooltip-root"
+export { TooltipTrigger as Trigger } from "./components/tooltip-trigger"
+export { TooltipTriggerPrimitive as TriggerPrimitive } from "./components/tooltip-trigger-primitive"
+export type { TooltipContentProps as ContentProps } from "./types/tooltip-content"
+export type { TooltipRootProps as RootProps } from "./types/tooltip-root"
+export type { TooltipTriggerProps as TriggerProps } from "./types/tooltip-trigger"
+export type { TooltipTriggerPrimitiveProps as TriggerPrimitiveProps } from "./types/tooltip-trigger-primitive"

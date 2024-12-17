@@ -1,58 +1,38 @@
-import { LazyMotionDomAnimationProvider } from "@renderui/lazy-motion"
-import { cn, getOptionalObject } from "@renderui/utils"
-import { m } from "framer-motion"
-import { DEFAULT_CHECKBOX_INDICATOR_CLASSNAME } from "../constants/constants"
+import { cn } from "@renderui/utils"
 import type { CheckboxIndicatorProps } from "../types/checkbox-indicator"
-import { getMergedIndicatorVariantAnimation } from "../utils/get-merged-indicator-variant-animation"
 
 const CheckboxIndicator = (props: CheckboxIndicatorProps) => {
-  const {
-    isChecked,
-    hasIconContentWhenUnchecked,
-    className,
-    pathProps,
-    animate,
-    animationDuration,
-    initial = false,
-    fill = "none",
-    viewBox = "0 0 24 24",
-    ...restProps
-  } = props
+	const {
+		isChecked,
+		hasIconContentWhenUnchecked,
+		className,
+		animationDuration,
+		fill = "none",
+		viewBox = "0 0 24 24",
+		...restProps
+	} = props
 
-  const {
-    strokeLinecap = "round",
-    strokeLinejoin = "round",
-    d: dProp = "M4.5 12.75l6 6 9-13.5",
-    variants,
-    ...restPathprops
-  } = getOptionalObject(pathProps)
-
-  return (
-    <LazyMotionDomAnimationProvider>
-      <m.svg
-        fill={fill}
-        viewBox={viewBox}
-        initial={initial}
-        data-slot="indicator"
-        animate={(animate ?? isChecked) ? "checked" : "unchecked"}
-        className={cn(
-          DEFAULT_CHECKBOX_INDICATOR_CLASSNAME,
-          hasIconContentWhenUnchecked || isChecked ? undefined : "hidden",
-          className,
-        )}
-        {...restProps}
-      >
-        <m.path
-          data-slot="indicator-path"
-          strokeLinecap={strokeLinecap}
-          strokeLinejoin={strokeLinejoin}
-          d={dProp}
-          variants={getMergedIndicatorVariantAnimation(variants, animationDuration)}
-          {...restPathprops}
-        />
-      </m.svg>
-    </LazyMotionDomAnimationProvider>
-  )
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 15 15"
+			fill="none"
+			data-slot="checkbox-indicator"
+			className={cn(
+				"_checkbox-indicator size-4.5 text-white transition-[opacity] duration-[inherit]",
+				isChecked ? "opacity-100" : "opacity-0",
+				className,
+			)}
+			{...restProps}
+		>
+			<path
+				d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+				fill="currentColor"
+				fillRule="evenodd"
+				clipRule="evenodd"
+			/>
+		</svg>
+	)
 }
 
 export { CheckboxIndicator }

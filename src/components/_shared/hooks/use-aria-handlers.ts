@@ -1,5 +1,5 @@
 import { mergeProps } from '@renderui/utils'
-import React from 'react'
+import React, { useState } from 'react'
 import {
 	useFocus,
 	useFocusRing,
@@ -21,7 +21,7 @@ import { chain } from '@renderui/utils'
 
 function useAriaHandlers<T extends HTMLElement>(
 	props: OrUndefined<UseAriaHandlersProps>,
-	ref: React.ForwardedRef<T | null> | undefined,
+	ref: ForwardedRef<T | null> | undefined,
 ) {
 	const {
 		// PRESS
@@ -78,27 +78,27 @@ function useAriaHandlers<T extends HTMLElement>(
 		isUsingAriaPressProps = true,
 	} = props
 
-	const [isKeyboardPressed, setIsKeyboardPressed] = React.useState(false)
-	const [isLongPressed, setIsLongPressed] = React.useState(false)
+	const [isKeyboardPressed, setIsKeyboardPressed] = useState(false)
+	const [isLongPressed, setIsLongPressed] = useState(false)
 
 	const handlePressStart = (event: PressEvent) => {
-		if (isKeyboardPointerType(event)) setIsKeyboardPressed(true)
+		if (event.pointerType === 'keyboard') setIsKeyboardPressed(true)
 	}
 
 	const handlePressEnd = (event: PressEvent) => {
-		if (isKeyboardPointerType(event)) setIsKeyboardPressed(false)
+		if (event.pointerType === 'keyboard') setIsKeyboardPressed(false)
 	}
 
 	const handleKeyboardPressStart = (event: PressEvent) => {
-		if (isKeyboardPointerType(event) && onKeyboardPressStart) onKeyboardPressStart(event)
+		if (event.pointerType === 'keyboard' && onKeyboardPressStart) onKeyboardPressStart(event)
 	}
 
 	const handleKeyboardPressEnd = (event: PressEvent) => {
-		if (isKeyboardPointerType(event) && onKeyboardPressEnd) onKeyboardPressEnd(event)
+		if (event.pointerType === 'keyboard' && onKeyboardPressEnd) onKeyboardPressEnd(event)
 	}
 
 	const handleKeyboardPress = (event: PressEvent) => {
-		if (isKeyboardPointerType(event) && onKeyboardPress) onKeyboardPress(event)
+		if (event.pointerType === 'keyboard' && onKeyboardPress) onKeyboardPress(event)
 	}
 
 	// hooks propeties are asserted due to the decision to keep exactOptionalPropertyTypes: true - TS rule

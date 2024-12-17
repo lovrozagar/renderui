@@ -50,6 +50,7 @@
     "url": "git+https://github.com/lovrozagar/renderui.git"
   },
   "scripts": {
+    "prebuild": "node ../../../scripts/fix-exports.mjs",
     "build": "bunchee -m"
   },
   "sideEffects": false,

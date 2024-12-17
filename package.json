@@ -11,8 +11,7 @@
 		"@commitlint/format": "^19.5.0",
 		"@commitlint/types": "^19.5.0",
 		"@total-typescript/ts-reset": "^0.6.1",
-		"bunchee": "^5.5.1",
-		"bundlewatch": "^0.4.0",
+		"bunchee": "^5.6.1",
 		"commitlint": "^19.4.0",
 		"lefthook": "^1.7.12",
 		"npm-check-updates": "^16.14.20",
@@ -33,7 +32,6 @@
 	"scripts": {
 		"build": "bunchee -m",
 		"commitlint:init": "chmod +x .lefthook/commit-msg/commitlint.sh",
-		"dev": "vite dev",
 		"lefthook:init": "npx lefthook install",
 		"lint": "npx @biomejs/biome lint ./src",
 		"lint:check": "npx @biomejs/biome check ./src",
@@ -42,10 +40,5 @@
 		"type:check": "tsc --noEmit",
 		"type:coverage": "typescript-coverage-report"
 	},
-	"version": "2.0.6",
-  "workspaces": [
-    "src/packages/components/*",
-    "src/packages/utils/*",
-    "src/packages/hooks/*"
-  ]
+	"version": "2.0.6"
 }

@@ -28,6 +28,7 @@ const Toggle = (props: ToggleProps) => {
   return (
     <TogglePrimitive asChild pressed={isOn} onPressedChange={setIsOn}>
       <Button
+        data-slot="toggle"
         color={color}
         variant={variant ?? (isOn ? "solid" : "plain")}
         className={cn(DEFAUL_TOGGLE_CLASSNAME, className)}

@@ -1,34 +1,107 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
-	"organizeImports": {
-		"enabled": true
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"complexity": {
-				"noStaticOnlyClass": "off",
-				"noForEach": "off"
-			},
-			"suspicious": {
-				"noArrayIndexKey": "off"
-			},
-			"a11y": {
-				"useKeyWithClickEvents": "off",
-				"noSvgWithoutTitle": "off"
-			},
-			"recommended": true
-		}
-	},
-	"formatter": {
-		"lineWidth": 100
-	},
-	"javascript": {
-		"formatter": {
-			"quoteStyle": "single",
-			"jsxQuoteStyle": "single",
-			"quoteProperties": "preserve",
-			"semicolons": "asNeeded"
-		}
-	}
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "css": {
+    "formatter": {
+      "enabled": true
+    },
+    "linter": {
+      "enabled": true
+    }
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "include": ["src"]
+  },
+  "formatter": {
+    "enabled": true,
+    "lineWidth": 100,
+    "useEditorconfig": true
+  },
+  "javascript": {
+    "formatter": {
+      "enabled": true,
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "preserve",
+      "quoteStyle": "double",
+      "semicolons": "asNeeded"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "performance": {
+        "recommended": true
+      },
+      "correctness": {
+        "recommended": true,
+        "noUnusedVariables": {
+          "fix": "unsafe",
+          "level": "error"
+        }
+      },
+      "a11y": {
+        "noLabelWithoutControl": "off",
+        "noSvgWithoutTitle": "off",
+        "recommended": true,
+        "useKeyWithClickEvents": "off"
+      },
+      "complexity": {
+        "noForEach": "off",
+        "noStaticOnlyClass": "off",
+        "noUselessTernary": {
+          "fix": "safe",
+          "level": "error"
+        },
+        "recommended": true,
+        "useLiteralKeys": "off",
+        "useOptionalChain": {
+          "fix": "safe",
+          "level": "error"
+        }
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "fix": "safe",
+          "level": "error",
+          "options": {}
+        }
+      },
+      "recommended": true,
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
+      },
+      "style": {
+        "noUnusedTemplateLiteral": {
+          "fix": "safe",
+          "level": "error"
+        },
+        "noUselessElse": {
+          "fix": "safe",
+          "level": "error"
+        },
+        "recommended": true,
+        "useSelfClosingElements": {
+          "fix": "safe",
+          "level": "error"
+        },
+        "useTemplate": {
+          "fix": "safe",
+          "level": "error"
+        },
+        "useImportType": {
+          "fix": "safe",
+          "level": "error"
+        }
+      },
+      "suspicious": {
+        "noArrayIndexKey": "off",
+        "noMisleadingCharacterClass": "off",
+        "noShadowRestrictedNames": "off",
+        "recommended": true
+      }
+    }
+  },
+  "organizeImports": {
+    "enabled": true
+  }
 }

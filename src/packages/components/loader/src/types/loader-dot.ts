@@ -1,8 +1,9 @@
-import type { Simplify } from "@renderui/utils"
+import type { ClassNameProps, Simplify } from "@renderui/utils"
+import type { ComponentPropsWithRef } from "react"
 
-type LoaderDotPrimitiveProps = React.ComponentPropsWithRef<"span">
+type LoaderDotPrimitiveProps = Omit<ComponentPropsWithRef<"span">, "className">
 
-type LoaderDotCustomProps = {
+type LoaderDotCustomProps = ClassNameProps & {
   isPaused: boolean | null | undefined
   element?: "start" | "middle" | "end"
 }

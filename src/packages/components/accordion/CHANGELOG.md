@@ -31,3 +31,10 @@
 ### Patch changes
 
 - Updated dependencies
+
+## 1.0.5
+
+### Patch changes
+
+- Updated button dependency
+- Fix default export to be the last one, bundle fix

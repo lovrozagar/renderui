@@ -1,7 +1,7 @@
 import { cva } from "@renderui/utils"
 
 const sheetClasses = cva(
-  "fixed z-50 flex flex-col gap-4 border-mode-accent bg-mode p-6 shadow-lg shadow-black/60 outline-none ring-ring-color ring-offset-background transition-[box-shadow] duration-medium focus-visible:ring-ring-width focus-visible:ring-offset-offset",
+  "fixed z-50 flex flex-col gap-4 border-mode-accent bg-mode p-6 shadow-lg shadow-black/60 outline-none ring-ring-color ring-offset-background transition-[box-shadow] duration-medium focus-visible:ring focus-visible:ring-offset-offset",
   {
     variants: {
       side: {

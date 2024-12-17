@@ -8,7 +8,7 @@ const LoaderDot = (props: LoaderDotProps) => {
 
   return (
     <span
-      data-slot="dot"
+      data-slot="loader-dot"
       className={cn(
         DEFAULT_LOADER_DOT_CLASSNAME,
         isPaused ? LOADER_DOT_PAUSED_CLASSNAME : undefined,

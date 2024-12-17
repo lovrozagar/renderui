@@ -1,9 +1,9 @@
 "use client"
 
 import { TooltipProvider, Tooltip as TooltipRootPrimitive } from "@radix-ui/react-tooltip"
-import type { TooltipProps } from "../types/tooltip-root"
+import type { TooltipRootProps } from "../types/tooltip-root"
 
-const TooltipRoot = (props: TooltipProps) => {
+const TooltipRoot = (props: TooltipRootProps) => {
   const {
     isHoverableContentDisabled = false,
     skipDelayDuration = 0,

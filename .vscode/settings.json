@@ -15,11 +15,21 @@
 		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"editor.codeActionsOnSave": {
-		"source.fixAll": "explicit"
+		"quickfix.biome": "explicit",
+		"source.fixAll": "explicit",
+		"source.fixAll.biome": "explicit",
+		"source.fixAll.ts": "explicit",
+		"source.organizeImports.biome": "explicit",
+		"source.removeUnusedImports.ts": "explicit"
 	},
 	"editor.defaultFormatter": "biomejs.biome",
 	"editor.formatOnPaste": false,
 	"editor.formatOnSave": true,
+	"editor.inlineSuggest.enabled": true,
+	"explorer.confirmDragAndDrop": true,
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
 	"files.encoding": "utf8",
 	"files.insertFinalNewline": true,
 	"files.trimTrailingWhitespace": true,
@@ -38,9 +48,6 @@
 	},
 	"typescript.preferences.importModuleSpecifier": "non-relative",
 	"typescript.suggest.autoImports": true,
-	"typescript.updateImportsOnFileMove.enabled": "always",
-	"workbench.colorCustomizations": {
-		"minimap.background": "#00000000",
-		"scrollbar.shadow": "#00000000"
-	}
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"typescript.updateImportsOnFileMove.enabled": "always"
 }

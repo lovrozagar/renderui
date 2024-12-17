@@ -7,8 +7,8 @@ type SkeletonPrimitiveProps = Omit<ComponentPropsWithRef<"div">, "className">
 
 type SkeletonRenderCustomProps = ClassNameProps &
   SkeletonClassesProps &
-  Pick<AnimationStyleVariables, "animationDuration" | "animationTimingFunction"> &
-  PolymorphicProps & {
+  PolymorphicProps &
+  Pick<AnimationStyleVariables, "animationDuration" | "animationTimingFunction"> & {
     count?: number
   }
 

@@ -1,14 +1,12 @@
-import type { Simplify } from "@renderui/utils"
-import type { m } from "framer-motion"
+import type { ClassNameProps, Simplify } from "@renderui/utils"
 import type { ComponentPropsWithRef } from "react"
 
-type CheckboxIndicatorPrimitiveProps = ComponentPropsWithRef<typeof m.svg>
+type CheckboxIndicatorPrimitiveProps = Omit<ComponentPropsWithRef<"svg">, "className">
 
-type CheckboxIndicatorCustomProps = {
+type CheckboxIndicatorCustomProps = ClassNameProps & {
 	isChecked?: boolean
 	animationDuration?: number
 	hasIconContentWhenUnchecked?: boolean
-	pathProps?: ComponentPropsWithRef<typeof m.path>
 }
 
 type CheckboxIndicatorProps = Simplify<

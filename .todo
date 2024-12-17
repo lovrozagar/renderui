@@ -50,3 +50,9 @@ feat: add cursor props
 - color: tabs trigger, switch - done, TextInput - done, NumberInput - done, badge - done, combobox/select - done, link - done ?
 - fix: spin arrows not working on number input
 - css variables for accent colors
+
+
+/ AFTER 2.0.6 rewrite /
+
+- button ring
+- reveal variant is broken

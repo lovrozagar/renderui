@@ -3,17 +3,17 @@ import type { Simplify } from "@renderui/utils"
 import type { Tooltip as TooltipRootPrimitive } from "@radix-ui/react-tooltip"
 import type { ComponentPropsWithRef } from "react"
 
-type TooltipPrimitiveProps = Omit<
+type TooltipRootPrimitiveProps = Omit<
   ComponentPropsWithRef<typeof TooltipRootPrimitive>,
   "disableHoverableContent" | "delayDuration" | "skipDelayDuration" | "disableHoverableContent"
 >
 
-type TooltipProviderProps = {
+type TooltipRootProviderProps = {
   skipDelayDuration?: number | undefined
   delayDuration?: number | undefined
   isHoverableContentDisabled?: boolean | undefined
 }
 
-type TooltipProps = Simplify<TooltipPrimitiveProps & TooltipProviderProps>
+type TooltipRootProps = Simplify<TooltipRootPrimitiveProps & TooltipRootProviderProps>
 
-export type { TooltipProps }
+export type { TooltipRootProps }
