@@ -11,3 +11,9 @@
 ### Patch changes
 
 - Added toast global styling identifiers: data-slot, ._{component} class
+
+## 1.0.2
+
+### Patch changes
+
+- Fix utils dependency
