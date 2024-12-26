@@ -1,6 +1,6 @@
 "use client"
 
-import { chain, cn, getOptionalObject } from "@renderui/utils"
+import { chain, cn, optional } from "@renderui/utils"
 import { toast as toastPrimitive } from "sonner"
 import {
   DEFAULT_TOAST_ACTION_BUTTON_CLASSNAME,
@@ -26,28 +26,27 @@ const ToastContent = (props: ToastContentProps) => {
     children,
   } = props
 
-  const { className: containerClassName, ...restContainerProps } = getOptionalObject(containerProps)
+  const { className: containerClassName, ...restContainerProps } = optional(containerProps)
 
-  const { className: titleClassName, ...restTitleProps } = getOptionalObject(titleProps)
+  const { className: titleClassName, ...restTitleProps } = optional(titleProps)
 
-  const { className: descriptionClassName, ...restDescriptionProps } =
-    getOptionalObject(descriptionProps)
+  const { className: descriptionClassName, ...restDescriptionProps } = optional(descriptionProps)
 
   const {
     className: closeButtonClassName,
     children: closeButtonChildren,
     onClick: onCloseButtonClick,
     ...restCloseButtonProps
-  } = getOptionalObject(closeButtonProps)
+  } = optional(closeButtonProps)
 
-  const { className: closeIconClassName, ...restCloseIconProps } = getOptionalObject(closeIconProps)
+  const { className: closeIconClassName, ...restCloseIconProps } = optional(closeIconProps)
 
   const {
     className: actionButtonClassName,
     children: actionButtonChildren,
     onClick: onActionButtonClick,
     ...restActionButtonProps
-  } = getOptionalObject(actionButtonProps)
+  } = optional(actionButtonProps)
 
   const {
     container: factoryContainerClassName,

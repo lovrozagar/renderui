@@ -41,7 +41,16 @@ type Toast = {
   promise: <ToastData>(
     promise: PromiseT<ToastData>,
     data?: PromiseData<ToastData>,
-  ) => string | number
+  ) =>
+    | (string & {
+        unwrap: () => Promise<ToastData>
+      })
+    | (number & {
+        unwrap: () => Promise<ToastData>
+      })
+    | {
+        unwrap: () => Promise<ToastData>
+      }
 }
 
 export type { Toast }

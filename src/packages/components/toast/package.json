@@ -7,18 +7,21 @@
     "url": "https://github.com/renderui/issues"
   },
   "dependencies": {
-    "@renderui/utils": "*",
+    "@renderui/utils": "^1.0.1",
     "sonner": "latest"
   },
   "exports": {
     ".": {
       "import": {
-        "default": "./dist/index.js",
-        "types": "./dist/index.d.ts"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       }
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "homepage": "https://renderui.org",
   "license": "MIT",
   "main": "./dist/index.js",
