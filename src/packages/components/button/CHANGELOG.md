@@ -78,3 +78,9 @@
 ### Patch changes
 
 - Updated peer dependencies
+
+## 1.1.2
+
+### Patch changes
+
+- Enable nullable loading content
