@@ -5,7 +5,7 @@ import {
   AccordionTrigger as AccordionTriggerPrimitive,
 } from "@radix-ui/react-accordion"
 import { Button } from "@renderui/button"
-import { cn, getOptionalObject } from "@renderui/utils"
+import { cn, optional } from "@renderui/utils"
 import {
   DEFAULT_ACCORDION_HEADER_CLASSNAME,
   DEFAULT_ACCORDION_TRIGGER_CLASSNAME,
@@ -28,9 +28,9 @@ const AccordionTrigger = (props: AccordionTriggerProps) => {
     ...restProps
   } = props
 
-  const { className: headerClassName, ...restAccordionHeaderProps } = getOptionalObject(headerProps)
+  const { className: headerClassName, ...restAccordionHeaderProps } = optional(headerProps)
 
-  const { className: iconClassName, ...restIconProps } = getOptionalObject(iconProps)
+  const { className: iconClassName, ...restIconProps } = optional(iconProps)
 
   const renderIcon = () => {
     if (!hasIcon) return null

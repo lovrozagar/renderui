@@ -23,7 +23,7 @@ const AccordionRoot = <T extends AccordionRootType, V extends string | number>(
     ...restProps
   } = props
 
-  /* biome-ignore lint/suspicious/noExplicitAny: cast as any for primitive compatiblity */
+  /* biome-ignore lint/suspicious/noExplicitAny: cast as any for primitive compatibility */
   const [value, setValue] = useControllableState<any>({
     prop: valueProp,
     defaultProp: defaultValue,

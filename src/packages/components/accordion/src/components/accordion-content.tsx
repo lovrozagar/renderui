@@ -1,7 +1,7 @@
 "use client"
 
 import { AccordionContent as AccordionContentPrimitive } from "@radix-ui/react-accordion"
-import { cn, getOptionalObject, polymorphic } from "@renderui/utils"
+import { cn, optional, polymorphic } from "@renderui/utils"
 import { getAnimationStyleVariables } from "@renderui/utils-internal"
 import {
   DEFAULT_ACCORDION_CONTENT_CHILDREN_CONTAINER_CLASSNAME,
@@ -28,7 +28,7 @@ const AccordionContent = (props: AccordionContentProps) => {
     asChild,
     className: childrenContainerClassName,
     ...restChildrenContainerProps
-  } = getOptionalObject(childrenContainerProps)
+  } = optional(childrenContainerProps)
 
   const AccordionContentChildrenContainer = polymorphic(asChild, "div")
 

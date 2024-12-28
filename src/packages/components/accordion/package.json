@@ -9,9 +9,15 @@
   "dependencies": {
     "@radix-ui/react-accordion": "latest",
     "@radix-ui/react-use-controllable-state": "latest",
-    "@renderui/button": "latest",
-    "@renderui/utils": "latest",
-    "@renderui/utils-internal": "latest"
+    "@renderui/utils-internal": "1.0.5"
+  },
+  "devDependencies": {
+    "@renderui/button": ">=1.1.2",
+    "@renderui/utils": ">=1.0.1",
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+    "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc"
   },
   "exports": {
     ".": {
@@ -28,6 +34,8 @@
   "module": "./dist/index.js",
   "name": "@renderui/accordion",
   "peerDependencies": {
+    "@renderui/button": ">=1.1.2",
+    "@renderui/utils": ">=1.0.1",
     "@types/react": "*",
     "@types/react-dom": "*",
     "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
@@ -50,8 +58,8 @@
     "url": "git+https://github.com/lovrozagar/renderui.git"
   },
   "scripts": {
-    "prebuild": "node ../../../scripts/fix-exports.mjs",
-    "build": "bunchee -m"
+    "build": "bunchee -m",
+    "prebuild": "node ../../../scripts/fix-exports.mjs"
   },
   "sideEffects": false,
   "type": "module",
