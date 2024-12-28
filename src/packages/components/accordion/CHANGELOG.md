@@ -36,5 +36,5 @@
 
 ### Patch changes
 
-- Updated button dependency
+- Updated package.json, rely on peer dependencies
 - Fix default export to be the last one, bundle fix
