@@ -12,3 +12,9 @@
 ### Patch changes
 
 - Dependency update, use button and utils peer dependencies
+
+## 1.0.3
+
+### Patch changes
+
+- Add portal to content
