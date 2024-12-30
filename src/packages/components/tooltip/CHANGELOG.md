@@ -6,3 +6,9 @@
 
 - Added tooltip separate components
 - Added tooltip compound component
+
+## 1.0.1
+
+### Patch changes
+
+- Dependency update, use button and utils peer dependencies

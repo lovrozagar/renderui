@@ -8,9 +8,11 @@
   },
   "dependencies": {
     "@radix-ui/react-tooltip": "latest",
-    "@renderui/button": "*",
-    "@renderui/utils": "*",
-    "@renderui/utils-internal": "*"
+    "@renderui/utils-internal": "^1.0.5"
+  },
+  "devDependencies": {
+    "@renderui/button": ">=1.1.2",
+    "@renderui/utils": ">=1.0.1"
   },
   "exports": {
     ".": {
@@ -27,6 +29,8 @@
   "module": "./dist/index.js",
   "name": "@renderui/tooltip",
   "peerDependencies": {
+    "@renderui/button": ">=1.1.2",
+    "@renderui/utils": ">=1.0.1",
     "@types/react": "*",
     "@types/react-dom": "*",
     "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",

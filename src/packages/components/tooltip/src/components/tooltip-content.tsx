@@ -4,7 +4,7 @@ import {
   TooltipArrow as TooltipArrowPrimitive,
   TooltipContent as TooltipContentPrimitive,
 } from "@radix-ui/react-tooltip"
-import { cn, getOptionalObject } from "@renderui/utils"
+import { cn, optional } from "@renderui/utils"
 
 import { getAnimationStyleVariables } from "@renderui/utils-internal"
 import type { CSSProperties } from "react"
@@ -35,7 +35,7 @@ const TooltipContent = (props: TooltipContentProps) => {
     ...restProps
   } = props
 
-  const { className: arrowClassName, ...restArrowProps } = getOptionalObject(arrowProps)
+  const { className: arrowClassName, ...restArrowProps } = optional(arrowProps)
 
   return (
     <TooltipContentPrimitive
