@@ -7,7 +7,7 @@
 - Added tooltip separate components
 - Added tooltip compound component
 
-## 1.0.1
+## 1.0.2
 
 ### Patch changes
 
