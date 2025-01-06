@@ -13,3 +13,9 @@
 
 - Updated dependencies
 - Fixed overlay
+
+## 1.0.2
+
+### Patch changes
+
+- Fix compound component export

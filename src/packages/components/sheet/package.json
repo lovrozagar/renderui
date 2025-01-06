@@ -25,10 +25,7 @@
       }
     }
   },
-  "files": [
-    "dist",
-    "README.md"
-  ],
+  "files": ["dist", "README.md"],
   "homepage": "https://renderui.org",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -66,5 +63,5 @@
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
