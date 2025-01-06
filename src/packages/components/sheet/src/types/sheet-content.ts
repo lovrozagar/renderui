@@ -3,11 +3,11 @@ import type {
   DialogPortal as SheetPortalPrimitive,
 } from "@radix-ui/react-dialog"
 import type { ButtonProps } from "@renderui/button"
-import type { OverlayProps } from "@renderui/overlay"
 import type { ClassNameProps, Simplify, VariantProps } from "@renderui/utils"
 import type { AnimationStyleVariables } from "@renderui/utils-internal"
 import type { ComponentPropsWithRef } from "react"
 import type { sheetClasses } from "../classes/sheet-classes"
+import type { SheetOverlayProps } from "./sheet-overlay"
 
 type SheetContentPrimitiveProps = Omit<
   ComponentPropsWithRef<typeof SheetContentPrimitive>,
@@ -19,7 +19,7 @@ type SheetContentCustomProps = ClassNameProps &
     hasCloseButton?: boolean
     hasOverlay?: boolean
     portalProps?: ComponentPropsWithRef<typeof SheetPortalPrimitive>
-    overlayProps?: OverlayProps
+    overlayProps?: SheetOverlayProps
     closeButtonProps?: ButtonProps
     closeButtonIconProps?: ComponentPropsWithRef<"svg">
     smallSizeWidth?: "3/4" | "full"
