@@ -1,4 +1,4 @@
-import type { ButtonProps, ButtonRenderProps } from "@renderui/button"
+import type { ButtonProps } from "@renderui/button"
 import type { Simplify } from "@renderui/utils"
 import type { ComponentPropsWithRef, ReactNode, Ref } from "react"
 import type { SwitchThumbProps } from "./switch-thumb"
@@ -8,7 +8,8 @@ type SwitchButtonProps = Omit<
   "children" | "disabled" | "readonly" | "required" | "startContent" | "children" | "endContent"
 >
 
-type SwitchRenderPropProps = Omit<ButtonRenderProps, "loaderProps"> & {
+type SwitchRenderPropProps = {
+  isPressed: boolean
   isChecked: boolean
 }
 

@@ -2,7 +2,7 @@
 
 import { useControllableState } from "@radix-ui/react-use-controllable-state"
 import { Button } from "@renderui/button"
-import { chain, cn, cx, getOptionalObject } from "@renderui/utils"
+import { chain, cn, cx, optional } from "@renderui/utils"
 import type React from "react"
 import {
   DEFAULT_HIDDEN_SWITCH_INPUT_CLASSNAME,
@@ -48,7 +48,7 @@ const Switch = (props: SwitchProps) => {
     checked: inputChecked,
     onChange,
     ...restInputProps
-  } = getOptionalObject(inputProps)
+  } = optional(inputProps)
 
   const internalContent = (
     <>
@@ -94,19 +94,19 @@ const Switch = (props: SwitchProps) => {
       className={cx(DEFAULT_SWITCH_CLASSNAME, className)}
       startContent={
         typeof startContent === "function"
-          ? ({ loaderProps: _, ...restProps }) => startContent({ ...restProps, isChecked: checked })
+          ? ({ isPressed }) => startContent({ isPressed, isChecked: checked })
           : startContent
       }
       endContent={
         typeof endContent === "function"
-          ? ({ loaderProps: _, ...restProps }) => endContent({ ...restProps, isChecked: checked })
+          ? ({ isPressed }) => endContent({ isPressed, isChecked: checked })
           : endContent
       }
       onPress={chain(() => setChecked((previousChecked) => !previousChecked), onPress)}
       {...restProps}
     >
       {typeof children === "function" ? (
-        ({ loaderProps: _, ...restProps }) => (
+        ({ ...restProps }) => (
           <>
             {children({ ...restProps, isChecked: checked })}
             {internalContent}
