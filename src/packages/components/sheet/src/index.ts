@@ -1,18 +1,5 @@
-export { SheetClosePrimitive } from "./components/sheet-close-primitive"
-export { SheetContent } from "./components/sheet-content"
-export { SheetDescription } from "./components/sheet-description"
-export { SheetFooter } from "./components/sheet-footer"
-export { SheetHeader } from "./components/sheet-header"
-export { SheetRoot } from "./components/sheet-root"
-export { SheetTitle } from "./components/sheet-title"
-export { SheetTrigger } from "./components/sheet-trigger"
-export { SheetTriggerPrimitive } from "./components/sheet-trigger-primitive"
-export type { SheetClosePrimitiveProps } from "./types/sheet-close-primitive"
-export type { SheetContentProps } from "./types/sheet-content"
-export type { SheetDescriptionProps } from "./types/sheet-description"
-export type { SheetFooterProps } from "./types/sheet-footer"
-export type { SheetHeaderProps } from "./types/sheet-header"
-export type { SheetRootProps } from "./types/sheet-root"
-export type { SheetTitleProps } from "./types/sheet-title"
-export type { SheetTriggerProps } from "./types/sheet-trigger"
-export type { SheetTriggerPrimitiveProps } from "./types/sheet-trigger-primitive"
+export * from "./exports.separate"
+
+import * as Sheet from "./exports.compound"
+
+export { Sheet }
