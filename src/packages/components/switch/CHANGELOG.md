@@ -16,5 +16,11 @@
 
 ### Patch changes
 
-- Fix destructive ring offset & visibility
-  
+- Fixed destructive ring offset & visibility
+
+## 1.0.3
+
+### Patch changes
+
+- Updated deps
+- Updated button render props
