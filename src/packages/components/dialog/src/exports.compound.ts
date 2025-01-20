@@ -1,18 +1,18 @@
-export { DialogClosePrimitive as ClosePrimitive } from "./components/dialog-close-primitive";
-export { DialogContent as Content } from "./components/dialog-content";
-export { DialogDescription as Description } from "./components/dialog-description";
-export { DialogFooter as Footer } from "./components/dialog-footer";
-export { DialogHeader as Header } from "./components/dialog-header";
-export { DialogRoot as Root } from "./components/dialog-root";
-export { DialogTitle as Title } from "./components/dialog-title";
-export { DialogTrigger as Trigger } from "./components/dialog-trigger";
-export { DialogTriggerPrimitive as TriggerPrimitive } from "./components/dialog-trigger-primitive";
-export type { DialogClosePrimitiveProps as ClosePrimitiveProps } from "./types/dialog-close-primitive";
-export type { DialogContentProps as ContentProps } from "./types/dialog-content";
-export type { DialogDescriptionProps as DescriptionProps } from "./types/dialog-description";
-export type { DialogFooterProps as FooterProps } from "./types/dialog-footer";
-export type { DialogHeaderProps as HeaderProps } from "./types/dialog-header";
-export type { DialogRootProps as RootProps } from "./types/dialog-root";
-export type { DialogTitleProps as TitleProps } from "./types/dialog-title";
-export type { DialogTriggerProps as TriggerProps } from "./types/dialog-trigger";
-export type { DialogTriggerPrimitiveProps as TriggerPrimitiveProps } from "./types/dialog-trigger-primitive";
+export { DialogClosePrimitive as ClosePrimitive } from "./components/dialog-close-primitive"
+export { DialogContent as Content } from "./components/dialog-content"
+export { DialogDescription as Description } from "./components/dialog-description"
+export { DialogFooter as Footer } from "./components/dialog-footer"
+export { DialogHeader as Header } from "./components/dialog-header"
+export { DialogRoot as Root } from "./components/dialog-root"
+export { DialogTitle as Title } from "./components/dialog-title"
+export { DialogTrigger as Trigger } from "./components/dialog-trigger"
+export { DialogTriggerPrimitive as TriggerPrimitive } from "./components/dialog-trigger-primitive"
+export type { DialogClosePrimitiveProps as ClosePrimitiveProps } from "./types/dialog-close-primitive"
+export type { DialogContentProps as ContentProps } from "./types/dialog-content"
+export type { DialogDescriptionProps as DescriptionProps } from "./types/dialog-description"
+export type { DialogFooterProps as FooterProps } from "./types/dialog-footer"
+export type { DialogHeaderProps as HeaderProps } from "./types/dialog-header"
+export type { DialogRootProps as RootProps } from "./types/dialog-root"
+export type { DialogTitleProps as TitleProps } from "./types/dialog-title"
+export type { DialogTriggerProps as TriggerProps } from "./types/dialog-trigger"
+export type { DialogTriggerPrimitiveProps as TriggerPrimitiveProps } from "./types/dialog-trigger-primitive"

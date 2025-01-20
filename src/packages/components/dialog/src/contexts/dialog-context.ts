@@ -8,6 +8,6 @@ type DialogContext = {
   setOpen: ReturnType<typeof useControllableState<boolean>>[1]
 }
 
-const [DialogProvider, useDialogContext] = createContext<DialogContext>('Dialog')
+const [DialogProvider, useDialogContext] = createContext<DialogContext>("DialogRoot")
 
 export { DialogProvider, useDialogContext }
