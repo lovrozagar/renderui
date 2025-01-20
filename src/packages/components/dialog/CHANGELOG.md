@@ -13,3 +13,10 @@
 - Added support for dialog content overflow, scrollable by root window scrollbar
 - Refactored context, better memoization & error message
 - Refactored exports to support compound components on the server
+
+## 1.0.2
+
+### Patch changes
+
+- Changed renderui dependencies to peer dependencies
+- Fixed exports

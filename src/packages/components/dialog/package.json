@@ -10,26 +10,30 @@
     "@radix-ui/react-context": "latest",
     "@radix-ui/react-dialog": "latest",
     "@radix-ui/react-use-controllable-state": "latest",
-    "@renderui/button": "*",
-    "@renderui/hooks": "*",
-    "@renderui/utils": "*",
-    "@renderui/utils-internal": "*"
+    "@radix-ui/react-compose-refs": "latest",
+    "@renderui/utils-internal": "latest"
   },
   "exports": {
     ".": {
       "import": {
-        "default": "./dist/index.js",
-        "types": "./dist/index.d.ts"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       }
     }
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "homepage": "https://renderui.org",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "name": "@renderui/dialog",
   "peerDependencies": {
+    "@renderui/button": ">=1.1.2",
+    "@renderui/hooks": ">=1.1.0",
+    "@renderui/utils": ">=1.0.1",
     "@types/react": "*",
     "@types/react-dom": "*",
     "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
@@ -58,5 +62,5 @@
   "sideEffects": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
