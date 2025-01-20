@@ -24,3 +24,10 @@
 
 - Updated deps
 - Updated button render props
+
+## 1.0.4
+
+### Patch changes
+
+- Fixed html validity, do not nest input inside button
+- Render input element only if name prop is passed
